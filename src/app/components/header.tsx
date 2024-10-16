@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <>
-      <div className={"flex justify-between items-center pt-[20px] pb-8 px-[92px]"}>
+      <div className={"flex justify-between items-center pt-[20px] pb-8 px-[39px]"}>
         <Image src={appLogo} alt={'appLogo'} className={""}/>
         <div className={"flex justify-center gap-[32px] text-neutral text-buttonTextSmall group group-hover:text-primary-dark [&>a]:text-white "}>
           <Link

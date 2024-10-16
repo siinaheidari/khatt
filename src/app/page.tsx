@@ -8,22 +8,15 @@ import AboutUS from "./components/about-us";
 import WhatWeDo from "./components/what-we-do";
 import Image from "next/image";
 import SimpleParallax from "simple-parallax-js";
-import test from "../../public/images/header_img.webp"
+import test from "/public/images/header_img.webp"
 import Services from "./components/services";
 import ContactUs from "./components/contact-us";
 import Footer from "./components/footer";
-import {useEffect} from "react";
-
 
 
 const Page = () => {
-
-
-
-
-
   return (
-    <>
+    <div data-aos={"fade-in "} >
       <div className={"relative mx-auto w-full max-w-[1200px] px-[24px] "}>
         <div className={"z-100 relative"}>
           <Header/>
@@ -44,30 +37,27 @@ const Page = () => {
           <Image src={test} alt="image" height={504} className={"mx-auto max-h-[504px] w-full max-w-[788.5px]"}/>
         </SimpleParallax>
 
-        {/*         <Parallax bgImage="/images/header_img.webp" className={"h-[502px] min-h-[502px] !w-full max-w-[1140px] mx-auto"}
-                  strength={100}>
 
-               </Parallax>*/}
 
       </div>
-      <div id="aboutUS" className={"bg-white "}>
+      <div id="aboutUS" className={"bg-white  px-[24px] "}>
         <AboutUS/>
       </div>
-      <div id="whatWeDo" className={"bg-white relative"}>
+      <div id="whatWeDo" className={"bg-white relative  px-[24px] "}>
         <WhatWeDo/>
       </div>
 
-      <div id="services" className={" pt-[164px] pb-[100px]"}>
+      <div id="services" className={" pt-[164px] pb-[100px]  px-[24px] "}>
         <Services/>
       </div>
 
-      <div id="contactUs" className={"bg-white "}>
+      <div id="contactUs" className={"bg-white  px-[24px] "}>
         <ContactUs/>
       </div>
-      <div className={" "}>
+      <div className={" px-[24px]  "}>
         <Footer/>
       </div>
-    </>
+    </div>
   );
 };
 
