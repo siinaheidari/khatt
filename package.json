@@ -1,0 +1,53 @@
+{
+  "name": "animation",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.1",
+    "@react-spring/parallax": "^9.7.5",
+    "@tsparticles/engine": "^3.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
+    "antd": "^5.21.3",
+    "aos": "^2.3.4",
+    "clsx": "^2.1.1",
+    "gsap": "^3.12.5",
+    "jarallax": "^2.2.1",
+    "lottie-react": "^2.4.0",
+    "next": "14.2.15",
+    "react": "^18",
+    "react-awesome-reveal": "^4.2.14",
+    "react-dom": "^18",
+    "react-gsap": "^3.2.1",
+    "react-intersection-observer": "^9.13.1",
+    "react-parallax": "^3.5.1",
+    "react-parallax-tilt": "^1.7.246",
+    "react-scroll": "^1.9.0",
+    "react-scroll-lock": "^1.0.0",
+    "react-scroll-parallax": "^3.4.5",
+    "react-scrollmagic": "^2.3.0",
+    "react-type-animation": "^3.2.0",
+    "react-use": "^17.5.1",
+    "simple-parallax-js": "^6.0.1",
+    "smooth-scroll-react": "^1.0.7",
+    "smooth-scrollbar": "^8.8.4",
+    "smooth-scrollbar-react": "^2.4.1",
+    "text-reveal": "^2.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

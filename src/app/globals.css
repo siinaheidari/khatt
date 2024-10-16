@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --fontFamily: var(--shabnam);
+}
+
+/*
+html[lang='en'] {
+  --fontFamily: var(--cairo)
+}
+*/
+
+
+html {
+  font-family: var(--fontFamily);
+  scroll-behavior: smooth;
+
+}
+
+@media (prefers-reduced-motion) {
+  html,
+  .scroll-container {
+    scroll-behavior: auto;
+  }
+}
+
+@layer utilities {
+  .center {
+    @apply flex justify-center items-center
+  }
+}
+
+.react-parallax-background-children{
+@apply  !important
+}
+
+
+
+.float-label {
+  @apply relative mb-[20px]
+}
+
+.label {
+  @apply text-buttonTextSmall absolute px-6 pointer-events-none start-30 top-18 transition-all duration-[.2s] bg-white z-100
+}
+
+.label-float {
+
+
+  @apply top-[-12px] bg-white z-100 text-blue
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+a:hover{
+  @apply text-primary-dark !important
+}
