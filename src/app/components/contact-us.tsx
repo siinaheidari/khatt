@@ -13,10 +13,11 @@ const ContactUs = () => {
 
   return (
     <div className={" h-[calc(100vh+80px)] center"}>
-      <div className={" w-full max-w-[1104px] mx-auto"}>
-        <div data-aos="zoom-in" className={"text-h2 !font-cairo mb-[80px]"}>
+      <div className={" w-full max-w-[1240px] mx-auto"}>
+        <div  className={"!text-h2 !font-cairo mb-[80px]"}>
           تماس با ما
         </div>
+
 
         <Form
           form={formRef}

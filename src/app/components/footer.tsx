@@ -11,8 +11,8 @@ import {Youtube} from "../../templates/icons/youtube";
 const Footer = () => {
   return (
     <div className={"pt-[120px]"}>
-      <div className={"w-full max-w-[1104px] mx-auto"}>
-        <div data-aos="fade-up " className={"mb-[84px]"}>
+      <div className={"w-full max-w-[1240px] mx-auto"}>
+        <div  className={"mb-[84px]"}>
           <Image src={aboutUsBg} alt={'aboutUsBg'} className={"mx-auto"}/>
         </div>
         <div

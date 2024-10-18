@@ -29,7 +29,7 @@ const SplashScreen: FC<PropsWithChildren> = ({children}) => {
     <>
       {
         splashScreenVisible && <div className="bg-black fixed z-999 inset-0 w-full h-dvh center !overflow-hidden">
-          <div data-aos="fade-up" data-aos-duration="1000" className="text-bodySm text-white items-center size-[250px] ">
+          <div  className="text-bodySm text-white items-center size-[250px] ">
             <Image src={khatLogo} alt={'khatLogo'} className={"size-full"}/>
           </div>
         </div>

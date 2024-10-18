@@ -1,18 +1,22 @@
+import whatWeDo from "/public/images/what-we-do.svg"
+import SimpleParallax from "simple-parallax-js";
+import Image from "next/image";
 
 const WhatWeDo = () => {
   return (
-        <div className={" w-full max-w-[1104px] mx-auto center h-screen "}>
+        <div className={" w-full max-w-[1240px] mx-auto center h-screen"}>
           <div className={"flex justify-between gap-x-[61px]"}>
-            <div data-aos="flip-right" className={"w-full max-w-[476px] bg-[#A4A4A4]"}/>
-            <div className={"w-full text-caption space-y-[24px]"}>
-              <div data-aos="fade-left" className={"text-h2 !font-cairo"}>
+              <Image src={whatWeDo} height={696} alt="whatWeDo"
+                     className={"mx-auto "}/>
+            <div className={"w-full text-caption text-bodyText2 space-y-[24px]"}>
+              <div  className={"text-h2 !font-cairo !text-black"}>
                 ما چیکار می کنیم؟
               </div>
-              <div data-aos="fade-right">
-                <div className={"text-primary text-bodyText1"}>
+              <div >
+                <div className={"text-primary  mt-24"}>
                   01.
                 </div>
-                <div className={"text-bodyText1"}>
+                <div className={""}>
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و
                   متون
                   بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
@@ -20,11 +24,11 @@ const WhatWeDo = () => {
                 </div>
               </div>
 
-              <div data-aos="fade-right">
-                <div className={"text-primary text-bodyText1"}>
+              <div >
+                <div className={"text-primary  mt-24" }>
                   02.
                 </div>
-                <div className={"text-bodyText1"}>
+                <div className={""}>
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و
                   متون
                   بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
@@ -32,11 +36,11 @@ const WhatWeDo = () => {
                 </div>
               </div>
 
-              <div data-aos="fade-right">
-                <div className={"text-primary text-bodyText1"}>
+              <div >
+                <div className={"text-primary  "}>
                   03.
                 </div>
-                <div className={"text-bodyText1"}>
+                <div className={""}>
                   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و
                   متون
                   بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای

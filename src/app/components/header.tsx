@@ -15,7 +15,6 @@ const Header = () => {
         <Image src={appLogo} alt={'appLogo'} className={""}/>
         <div className={"flex justify-center gap-[32px] text-neutral text-buttonTextSmall group group-hover:text-primary-dark [&>a]:text-white "}>
           <Link
-
             to="aboutUS"
           >
             درباره ما
