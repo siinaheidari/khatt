@@ -10,20 +10,21 @@ import {useLockBodyScroll} from "react-use";
 const SplashScreen: FC<PropsWithChildren> = ({children}) => {
   const [splashScreenVisible, setSplashScreenVisible] = useState(true);
 
+  console.log(splashScreenVisible)
+
   useEffect(() => {
     const timer = setTimeout(() => setSplashScreenVisible(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
-  useLockBodyScroll(splashScreenVisible)
-
+  // useLockBodyScroll(splashScreenVisible)
 
   useEffect(() => {
-
     return () => {
         window?.scroll({top:0})
     };
   }, []);
+
 
   return (
     <>
@@ -34,7 +35,8 @@ const SplashScreen: FC<PropsWithChildren> = ({children}) => {
           </div>
         </div>
       }
-      <div className={clsx({"invisible": splashScreenVisible})}>
+
+      <div className={clsx({"invisible [&>div]:h-0": splashScreenVisible})}>
         {children}
       </div>
     </>

@@ -1,3 +1,5 @@
+
+
 import "./globals.css";
 
 import {Layout} from "antd";
@@ -10,7 +12,6 @@ import AntdProvider from "./providers/antd";
 import SplashScreen from "./providers/splash-screen";
 import AosProvider from "./providers/aos";
 import SmoothScroll from "./providers/smooth-scroll";
-import {RemoveScrollBar} from "react-remove-scroll-bar";
 
 
 const poppins = Poppins({subsets: ["latin"], variable: "--poppins", weight: ["300", "400", "500", "700"]})
@@ -40,22 +41,23 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
 
     return (
 
-        <html className={shabnamFont?.variable + " " + cairo.variable + ' !min-h-dvh '}>
+        <html className={shabnamFont?.variable + " " + cairo.variable + ' !min-h-dvh !overflow-ellipsis'}>
         <body>
-        {/*<SmoothScroll>*/}
-
-            <AosProvider>
+        <div>
+                <AosProvider>
                 <AntdRegistry>
                     <AntdProvider>
                         <SplashScreen>
-                            <Layout className={"!min-h-dvh overflow-x-hidden !scroll-smooth"}>
+                            <Layout className={"!min-h-dvh overflow-x-hidden !scroll-smooth !overflow-ellipsis"}>
                                 {children}
                             </Layout>
                         </SplashScreen>
                     </AntdProvider>
                 </AntdRegistry>
-            </AosProvider>
-        {/*</SmoothScroll>*/}
+                </AosProvider>
+
+        </div>
+
 
         </body>
         </html>

@@ -81,7 +81,7 @@ const PageParticles = () => {
           density: {
             enable: true,
           },
-          value: 100,
+          value: 70,
         },
         opacity: {
           value: 0.5,

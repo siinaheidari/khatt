@@ -1,24 +1,36 @@
 'use client'
 //@ts-ignore
 import Scrollbar from "react-smooth-scrollbar";
-import SmoothScrollbar from "smooth-scrollbar";
-import OverscrollPlugin from "smooth-scrollbar/plugins/overscroll";
-import {FC, PropsWithChildren, useEffect} from "react";
+import {forwardRef, PropsWithChildren} from "react";
 
-const SmoothScroll: FC<PropsWithChildren> = ({children}) => {
+// Custom ref type (if you are expecting a scrollbar instance)
+interface ScrollbarElement extends HTMLDivElement {
+  scrollbar?: {
+    scrollIntoView: (element: HTMLElement, options: {
+      offsetTop: number,
+      damping: number
+    }) => void;
+  };
+}
 
-    return (
-        <Scrollbar
-            damping={0.03}
-            style={{ height: '100vh' }}
-            renderByPixels={true}
-            plugins={{
-                overscroll: {effect: "bounce", damping: 0.3},
-            }}
-        >
-            {children}
-        </Scrollbar>
-    );
-};
+const SmoothScroll= forwardRef<ScrollbarElement, PropsWithChildren>(({children}, ref) => {
+
+  return (
+    <Scrollbar
+      ref={ref}
+      continuousScrolling={true}
+      tabindex={-4}
+      damping={0.03}
+      className={"!h-screen !overflow-visible-"}
+      id={"test"}
+      renderByPixels={true}
+      plugins={{
+        overscroll: {effect: "bounce", damping: 0.3},
+      }}
+    >
+      {children}
+    </Scrollbar>
+  );
+});
 
 export default SmoothScroll;

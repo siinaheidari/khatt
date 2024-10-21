@@ -19,11 +19,13 @@
     "antd": "^5.21.3",
     "aos": "^2.3.4",
     "clsx": "^2.1.1",
+    "gsap": "^3.12.5",
     "lottie-react": "^2.4.0",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
     "react-parallax-tilt": "^1.7.246",
+    "react-perfect-scrollbar": "^1.5.8",
     "react-remove-scroll-bar": "^2.3.6",
     "react-scroll": "^1.9.0",
     "react-scrollmagic": "^2.3.0",
@@ -33,7 +35,8 @@
     "react-use": "^17.5.1",
     "scrollmagic": "^2.0.8",
     "simple-parallax-js": "^6.0.1",
-    "smooth-scrollbar": "^8.8.4"
+    "smooth-scrollbar": "^8.8.4",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@types/node": "^20",

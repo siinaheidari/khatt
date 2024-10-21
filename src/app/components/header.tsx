@@ -13,7 +13,7 @@ const Header = () => {
     <>
       <div className={"flex justify-between items-center pt-[20px] pb-8 px-[39px]"}>
         <Image src={appLogo} alt={'appLogo'} className={""}/>
-        <div className={"flex justify-center gap-[32px] text-neutral text-buttonTextSmall group group-hover:text-primary-dark [&>a]:text-white "}>
+        <div className={"flex justify-center gap-[32px] text-neutral text-buttonTextSmall [&>a]:text-white "}>
           <Link
             to="aboutUS"
           >
@@ -21,33 +21,19 @@ const Header = () => {
           </Link>
 
           <Link
-            activeClass="active"
             to="whatWeDo"
-
-
-
           >
             خدمات
           </Link>
 
           <Link
-            activeClass="active"
             to="services"
-
-            smooth={true}
-
-            // offset={50}
           >
             نمونه کارها
           </Link>
 
           <Link
-            activeClass="active"
             to="contactUs"
-            spy={true}
-            smooth={true}
-            duration={500}
-            // offset={50}
           >
             تماس با ما
           </Link>
@@ -63,4 +49,3 @@ const Header = () => {
 };
 
 export default Header;
-

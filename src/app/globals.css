@@ -16,16 +16,9 @@ html[lang='en'] {
 
 html {
   font-family: var(--fontFamily);
-  scroll-behavior: smooth;
-
 }
 
-@media (prefers-reduced-motion) {
-  html,
-  .scroll-container {
-    scroll-behavior: auto;
-  }
-}
+
 
 @layer utilities {
   .center {
@@ -50,40 +43,37 @@ html {
 .label-float {
   @apply top-[-12px] bg-white z-100 text-blue
 }
+
 html {
   scroll-behavior: smooth !important;
-  overflow-y: scroll; /* Ensure scroll bar is always visible */
+
 }
-/*body {
+body {
   scroll-behavior: smooth !important;
 }
 
 body::-webkit-scrollbar {
   width: 8px;
-  -ms-overflow-style: none;  !* IE and Edge *!
-  scrollbar-width: none;  !* Firefox *!
 }
 
 body::-webkit-scrollbar-track {
   background: #212120;
-  -ms-overflow-style: none;  !* IE and Edge *!
-  scrollbar-width: none;  !* Firefox *!
+
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: #0a0a0a;
   border-radius: 20px;
   border: 8px solid #EFBE03;
-  -ms-overflow-style: none;  !* IE and Edge *!
-  scrollbar-width: none;  !* Firefox *!
-}*/
+
+}
 
 a{
   color: white!important;
 }
 
 a:hover{
-
+  @apply text-primary-dark !important
 }
 section {
 
@@ -93,9 +83,11 @@ section {
 
 }
 
-.span {
 
-}
+/*
 ::-webkit-scrollbar {
   display: none;
 }
+*/
+
+
