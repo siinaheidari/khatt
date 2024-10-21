@@ -1,8 +1,5 @@
 import "./globals.css";
-
 import {Layout} from "antd";
-
-
 import {Cairo, Poppins} from "next/font/google";
 import localFont from "next/font/local";
 import {AntdRegistry} from "@ant-design/nextjs-registry";
@@ -11,7 +8,7 @@ import SplashScreen from "./providers/splash-screen";
 import AosProvider from "./providers/aos";
 
 
-const poppins = Poppins({subsets: ["latin"], variable: "--poppins", weight: ["300", "400", "500", "700"]})
+
 const cairo = Cairo({subsets: ["latin"], variable: "--cairo", weight: ["300", "400", "500", "700"]})
 
 const shabnamFont = localFont({

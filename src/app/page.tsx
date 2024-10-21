@@ -13,16 +13,14 @@ import ContactUs from "./components/contact-us";
 import Footer from "./components/footer";
 import mainSectionBanner from "/public/images/main-Section.svg"
 
-import {useRef} from "react";
 
 const Page = () => {
 
-  const scrollbarRef = useRef(null);
+
 
   return (
     <>
 
-      {/*<SmoothScroll ref={scrollbarRef}>*/}
 
       <div className={"relative mx-auto w-full max-w-[1240px] px-[24px] "}>
         <div className={"z-100 relative"}>
@@ -63,7 +61,7 @@ const Page = () => {
       <div className={" px-[24px]  "}>
         <Footer/>
       </div>
-      {/*</SmoothScroll>*/}
+
     </>
   );
 };

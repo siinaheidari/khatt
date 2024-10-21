@@ -9,7 +9,7 @@ import {clsx} from "clsx";
 const SplashScreen: FC<PropsWithChildren> = ({children}) => {
   const [splashScreenVisible, setSplashScreenVisible] = useState(true);
 
-  console.log(splashScreenVisible)
+
 
   useEffect(() => {
     const timer = setTimeout(() => setSplashScreenVisible(false), 1500);
