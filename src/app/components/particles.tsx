@@ -2,7 +2,7 @@
 
 import {useEffect, useMemo, useState} from "react";
 import Particles, {initParticlesEngine} from "@tsparticles/react";
-import {type Container, type ISourceOptions, MoveDirection, OutMode,} from "@tsparticles/engine";
+import {type Container, MoveDirection, OutMode,} from "@tsparticles/engine";
 
 import {loadSlim} from "@tsparticles/slim";
 
@@ -30,9 +30,7 @@ const PageParticles = () => {
         // IMPORTANT
       },
       background: {
-        color: {
-
-        },
+        color: {},
       },
       fpsLimit: 120,
       interactivity: {

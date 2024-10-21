@@ -5,7 +5,6 @@ import {FC, PropsWithChildren, useEffect, useState} from 'react';
 import khatLogo from '../../../public/images/appLogo.svg'
 import Image from "next/image";
 import {clsx} from "clsx";
-import {useLockBodyScroll} from "react-use";
 
 const SplashScreen: FC<PropsWithChildren> = ({children}) => {
   const [splashScreenVisible, setSplashScreenVisible] = useState(true);
@@ -21,7 +20,7 @@ const SplashScreen: FC<PropsWithChildren> = ({children}) => {
 
   useEffect(() => {
     return () => {
-        window?.scroll({top:0})
+      window?.scroll({top: 0})
     };
   }, []);
 
@@ -30,7 +29,7 @@ const SplashScreen: FC<PropsWithChildren> = ({children}) => {
     <>
       {
         splashScreenVisible && <div className="bg-black fixed z-999 inset-0 w-full h-dvh center !overflow-hidden">
-          <div  className="text-bodySm text-white items-center size-[250px] ">
+          <div className="text-bodySm text-white items-center size-[250px] ">
             <Image src={khatLogo} alt={'khatLogo'} className={"size-full"}/>
           </div>
         </div>

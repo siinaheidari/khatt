@@ -8,26 +8,25 @@ import AboutUS from "./components/about-us";
 import WhatWeDo from "./components/what-we-do";
 import Image from "next/image";
 import SimpleParallax from "simple-parallax-js";
-
 import Services from "./components/services";
 import ContactUs from "./components/contact-us";
 import Footer from "./components/footer";
 import mainSectionBanner from "/public/images/main-Section.svg"
-import SmoothScroll from "./providers/smooth-scroll";
-import {useEffect, useRef} from "react";
+
+import {useRef} from "react";
 
 const Page = () => {
 
   const scrollbarRef = useRef(null);
 
   return (
-<>
+    <>
 
-    {/*<SmoothScroll ref={scrollbarRef}>*/}
+      {/*<SmoothScroll ref={scrollbarRef}>*/}
 
       <div className={"relative mx-auto w-full max-w-[1240px] px-[24px] "}>
         <div className={"z-100 relative"}>
-          <Header ref={scrollbarRef}/>
+          <Header/>
         </div>
         <div className={"relative"}>
           <PageParticles/>
@@ -48,7 +47,7 @@ const Page = () => {
 
 
       </div>
-      <div id="aboutUS" className={"!bg-white px-[24px]"} >
+      <div id="aboutUS" className={"!bg-white px-[24px]"}>
         <AboutUS/>
       </div>
       <div id="whatWeDo" className={"bg-white relative px-[24px] "}>
@@ -63,8 +62,8 @@ const Page = () => {
       <div className={" px-[24px]  "}>
         <Footer/>
       </div>
-    {/*</SmoothScroll>*/}
-</>
+      {/*</SmoothScroll>*/}
+    </>
   );
 };
 

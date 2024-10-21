@@ -1,5 +1,3 @@
-
-
 import "./globals.css";
 
 import {Layout} from "antd";
@@ -11,55 +9,54 @@ import {AntdRegistry} from "@ant-design/nextjs-registry";
 import AntdProvider from "./providers/antd";
 import SplashScreen from "./providers/splash-screen";
 import AosProvider from "./providers/aos";
-import SmoothScroll from "./providers/smooth-scroll";
 
 
 const poppins = Poppins({subsets: ["latin"], variable: "--poppins", weight: ["300", "400", "500", "700"]})
 const cairo = Cairo({subsets: ["latin"], variable: "--cairo", weight: ["300", "400", "500", "700"]})
 
 const shabnamFont = localFont({
-    src: [
-        {
-            path: '../assets/fonts/shabnam/Shabnam.ttf',
-            weight: '400'
-        },
-        {
-            path: '../assets/fonts/shabnam/Shabnam-Medium.ttf',
-            weight: '500'
-        },
-        {
-            path: '../assets/fonts/shabnam/Shabnam-Bold.ttf',
-            weight: '700'
-        }
-    ],
-    variable: '--shabnam'
+  src: [
+    {
+      path: '../assets/fonts/shabnam/Shabnam.ttf',
+      weight: '400'
+    },
+    {
+      path: '../assets/fonts/shabnam/Shabnam-Medium.ttf',
+      weight: '500'
+    },
+    {
+      path: '../assets/fonts/shabnam/Shabnam-Bold.ttf',
+      weight: '700'
+    }
+  ],
+  variable: '--shabnam'
 });
 
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
 
 
-    return (
+  return (
 
-        <html className={shabnamFont?.variable + " " + cairo.variable + ' !min-h-dvh !overflow-ellipsis'}>
-        <body>
-        <div>
-                <AosProvider>
-                <AntdRegistry>
-                    <AntdProvider>
-                        <SplashScreen>
-                            <Layout className={"!min-h-dvh overflow-x-hidden !scroll-smooth !overflow-ellipsis"}>
-                                {children}
-                            </Layout>
-                        </SplashScreen>
-                    </AntdProvider>
-                </AntdRegistry>
-                </AosProvider>
+    <html className={shabnamFont?.variable + " " + cairo.variable + ' !min-h-dvh !overflow-ellipsis'}>
+    <body>
+    <div>
+      <AosProvider>
+        <AntdRegistry>
+          <AntdProvider>
+            <SplashScreen>
+              <Layout className={"!min-h-dvh overflow-x-hidden !scroll-smooth !overflow-ellipsis"}>
+                {children}
+              </Layout>
+            </SplashScreen>
+          </AntdProvider>
+        </AntdRegistry>
+      </AosProvider>
 
-        </div>
+    </div>
 
 
-        </body>
-        </html>
-    );
+    </body>
+    </html>
+  );
 }

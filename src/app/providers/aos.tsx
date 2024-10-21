@@ -4,7 +4,8 @@ import {FC, PropsWithChildren, useEffect} from "react";
 import 'aos/dist/aos.css';
 //@ts-ignore
 import AOS from "aos";
-const AosProvider:FC<PropsWithChildren> = ({children}) => {
+
+const AosProvider: FC<PropsWithChildren> = ({children}) => {
 
   useEffect(() => {
     AOS.init({

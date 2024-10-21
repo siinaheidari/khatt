@@ -14,7 +14,7 @@ const ContactUs = () => {
   return (
     <div className={" h-[calc(100vh+80px)] center"}>
       <div className={" w-full max-w-[1240px] mx-auto"}>
-        <div  className={"!text-h2 !font-cairo mb-[80px]"}>
+        <div className={"!text-h2 !font-cairo mb-[80px]"}>
           تماس با ما
         </div>
 
@@ -111,7 +111,8 @@ const ContactUs = () => {
             </div>
           </div>
 
-          <div className={"border border-black py-16 px-24 text-buttonTextSmall flex items-center gap-24 w-fit mt-56 hover:bg-primary-dark hover:text-white cursor-pointer transition-all"}>
+          <div
+            className={"border border-black py-16 px-24 text-buttonTextSmall flex items-center gap-24 w-fit mt-56 hover:bg-primary-dark hover:text-white cursor-pointer transition-all"}>
             ارسال
             <Image src={doubleCheck} alt={'doubleCheck'} className={"text-[24px]"}/>
 

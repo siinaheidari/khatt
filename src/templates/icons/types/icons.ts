@@ -1,4 +1,12 @@
-import { AriaAttributes, ComponentType, CSSProperties, ForwardRefExoticComponent, HTMLProps, RefAttributes, SVGProps } from 'react';
+import {
+  AriaAttributes,
+  ComponentType,
+  CSSProperties,
+  ForwardRefExoticComponent,
+  HTMLProps,
+  RefAttributes,
+  SVGProps
+} from 'react';
 
 interface CustomIconComponentProps {
   width: string | number;

@@ -1,6 +1,7 @@
-import { FC } from 'react';
-import { TIconsProps, TIconsSvgProps } from '@/templates/icons/types/icons';
-import { clsx } from 'clsx';
+import {FC} from 'react';
+
+import {clsx} from 'clsx';
+import {TIconsProps, TIconsSvgProps} from './types/icons';
 
 const svgBaseProps = {
   width: '1em',
@@ -22,43 +23,43 @@ const SvgIcon: FC<Omit<TIconsProps, 'component'> & { component?: any }> = (props
     children,
     ...restProps
   } = props;
-  
+
   const svgClassString = clsx({
-    [ `anticon-spin` ]: !!spin
+    [`anticon-spin`]: !!spin
   });
-  
+
   const svgStyle = rotate
     ? {
-      msTransform: `rotate(${ rotate }deg)`,
-      transform: `rotate(${ rotate }deg)`
+      msTransform: `rotate(${rotate}deg)`,
+      transform: `rotate(${rotate}deg)`
     }
     : undefined;
-  
+
   const innerSvgProps: TIconsSvgProps = {
     ...svgBaseProps,
     className: svgClassString,
     style: svgStyle,
     viewBox
   };
-  
+
   if (!viewBox) {
     delete innerSvgProps.viewBox;
   }
-  
+
   let iconTabIndex = tabIndex;
   if (iconTabIndex === undefined && onClick) {
     iconTabIndex = -1;
   }
-  
+
   return (
     <span
       role="img"
-      { ...restProps }
-      tabIndex={ iconTabIndex }
-      onClick={ onClick }
-      className={ clsx(className, 'anticon') }
+      {...restProps}
+      tabIndex={iconTabIndex}
+      onClick={onClick}
+      className={clsx(className, 'anticon')}
     >
-      { component(innerSvgProps) }
+      {component(innerSvgProps)}
     </span>
   );
 };

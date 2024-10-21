@@ -1,32 +1,81 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "esModuleInterop": true,
+    "target": "es5",
     "lib": [
       "dom",
-      "es2015"
+      "dom.iterable",
+      "esnext"
     ],
-    "jsx": "preserve",
-    "downlevelIteration": true,
     "allowJs": true,
     "skipLibCheck": true,
+    "strict": true,
     "noEmit": true,
-    "incremental": true,
+    "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/market/*": [
+        "./src/app/[locale]/(market)/*"
+      ],
+      "@/dashboard/*": [
+        "./src/app/[locale]/dashboard/*"
+      ],
+      "@/dashboard/apis/*": [
+        "./src/app/[locale]/dashboard/apis/*"
+      ],
+      "@/dashboard/applications/*": [
+        "./src/app/[locale]/dashboard/applications/*"
+      ],
+      "@/dashboard/categories/*": [
+        "./src/app/[locale]/dashboard/categories/*"
+      ],
+      "@/dashboard/providers/*": [
+        "./src/app/[locale]/dashboard/providers/*"
+      ],
+      "@/dashboard/services/*": [
+        "./src/app/[locale]/dashboard/services/*"
+      ],
+      "@/services/flowTab/*": [
+        "./src/app/[locale]/dashboard/services/(create-edit)/components/flow-tab/*"
+      ],
+      "@/dashboard/reports/*": [
+        "./src/app/[locale]/dashboard/reports/*"
+      ],
+      "@/dashboard/reports/byCustomersFinancial/*": [
+        "./src/app/[locale]/dashboard/reports/financial/(byCustomers)/*"
+      ],
+      "@/dashboard/reports/byProvidersFinancial/*": [
+        "./src/app/[locale]/dashboard/reports/financial/(byProviders)/*"
+      ],
+      "@/dashboard/reports/byCustomersTechnical/*": [
+        "./src/app/[locale]/dashboard/reports/technical/(byCustomers)/*"
+      ],
+      "@/dashboard/reports/byProvidersTechnical/*": [
+        "./src/app/[locale]/dashboard/reports/technical/(byProviders)/*"
+      ],
+      "@/auth/*": [
+        "./src/app/[locale]/auth/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <div className={"pt-[120px]"}>
       <div className={"w-full max-w-[1240px] mx-auto"}>
-        <div  className={"mb-[84px]"}>
+        <div className={"mb-[84px]"}>
           <Image src={aboutUsBg} alt={'aboutUsBg'} className={"mx-auto"}/>
         </div>
         <div
@@ -39,7 +39,8 @@ const Footer = () => {
           <Mailbox/>
         </div>
       </div>
-      <div className={"bg-[linear-gradient(90deg,#5D5D5D_0%,#888_50%,#5D5D5D_100%)] w-full h-[1px] text-white mt-[56px]"}/>
+      <div
+        className={"bg-[linear-gradient(90deg,#5D5D5D_0%,#888_50%,#5D5D5D_100%)] w-full h-[1px] text-white mt-[56px]"}/>
       <div className={"text-white text-center py-[16px]"}>Copyright KHAT Digital Marketing Agency 2024 | Privacy
         Policy
       </div>

@@ -19,17 +19,15 @@ html {
 }
 
 
-
 @layer utilities {
   .center {
     @apply flex justify-center items-center
   }
 }
 
-.react-parallax-background-children{
-@apply  !important
+.react-parallax-background-children {
+  @apply !important
 }
-
 
 
 .float-label {
@@ -48,6 +46,7 @@ html {
   scroll-behavior: smooth !important;
 
 }
+
 body {
   scroll-behavior: smooth !important;
 }
@@ -68,13 +67,14 @@ body::-webkit-scrollbar-thumb {
 
 }
 
-a{
-  color: white!important;
+a {
+  color: white !important;
 }
 
-a:hover{
+a:hover {
   @apply text-primary-dark !important
 }
+
 section {
 
 }

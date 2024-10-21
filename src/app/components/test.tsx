@@ -2,7 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
-import { Controller, Scene } from "react-scrollmagic";
+import {Controller, Scene} from "react-scrollmagic";
 import WhatWeDo from "./what-we-do";
 
 
@@ -54,16 +54,16 @@ const Sticky2Styled = styled.div`
 const Sticky2 = () => (
 
 
-    <Controller>
-      <Scene triggerHook="onLeave" duration={1000} pin>
+  <Controller>
+    <Scene triggerHook="onLeave" duration={1000} pin>
 
-          <div className="sticky sticky-one !text-white">
-            <WhatWeDo/>
-          </div>
+      <div className="sticky sticky-one !text-white">
+        <WhatWeDo/>
+      </div>
 
-      </Scene>
+    </Scene>
 
-    </Controller>
+  </Controller>
 
 
 );
