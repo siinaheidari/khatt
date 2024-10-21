@@ -46,7 +46,6 @@ const Page = () => {
 
       </div>
       <div id="aboutUS" className={"!bg-white px-[24px]"}>
-
         <AboutUS/>
       </div>
       <div id="whatWeDo" className={"bg-white relative px-[24px] "}>
@@ -58,7 +57,7 @@ const Page = () => {
       <div id="contactUs" className={"bg-white  px-[24px] "}>
         <ContactUs/>
       </div>
-      <div className={" px-[24px]  "}>
+      <div className={" px-[24px] relative z-20"}>
         <Footer/>
       </div>
 

@@ -195,11 +195,11 @@ const ContactUs = () => {
             لورم ایپسوم متن ساختگی با (تولید سادگی)
           </div>
 
-          <div className={"flex flex-wrap gap-x-8 gap-y-16 text-buttonTextSmall mt-32"}>
+          <div  data-aos={"fade-left"} className={"flex flex-wrap gap-x-8 gap-y-16 text-buttonTextSmall mt-32"}>
 
             {
               services?.map(item =>
-                <div data-aos={"fade-left"} onClick={() => handleSelectedServices(item)} key={item?.id}
+                <div onClick={() => handleSelectedServices(item)} key={item?.id}
                      className={`${selectedServices.includes(item?.id) ? 'bg-primary-dark !text-black' :
                        'bg-white'} py-[18px] text-neutralDarker w-fit px-[36px] border border-[#00000040] rounded-[20px] cursor-pointer`}>
                   {item?.title}
