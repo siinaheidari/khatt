@@ -12,7 +12,9 @@ import {useState} from "react";
 import {InstagramFill} from "@/templates/icons/instagram-fill";
 import {LinkedinFill} from "@/templates/icons/linkedin-fill";
 import {XFill} from "@/templates/icons/x-fill";
+//@ts-ignore
 import {Link} from "react-scroll";
+
 
 const Footer = () => {
 
