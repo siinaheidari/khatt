@@ -27,7 +27,7 @@ const SplashScreen: FC<PropsWithChildren> = ({children}) => {
   return (
     <>
       {
-         <div className={clsx("bg-black fixed z-999 inset-0 w-full h-dvh center !overflow-hidden transition-all duration-1000",{"opacity-0 z-0":!splashScreenVisible})}>
+         <div className={clsx("bg-black fixed z-999 inset-0 w-full h-dvh center !overflow-hidden transition-all duration-1000",{"opacity-0 !z-0":!splashScreenVisible})}>
           <div data-aos={'fade-up'} className="text-bodySm text-white items-center size-[250px] ">
             <Image src={khatLogo} alt={'khatLogo'} className={"size-full"}/>
           </div>
