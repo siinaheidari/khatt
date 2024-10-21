@@ -1,5 +1,8 @@
 import "./globals.css";
+
 import {Layout} from "antd";
+
+
 import {Cairo, Poppins} from "next/font/google";
 import localFont from "next/font/local";
 import {AntdRegistry} from "@ant-design/nextjs-registry";
