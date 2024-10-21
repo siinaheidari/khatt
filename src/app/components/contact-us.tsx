@@ -82,7 +82,7 @@ const ContactUs = () => {
 
   return (
     <div className={" mb-[52px] center relative  w-full max-w-[1240px] mx-auto overflow-hidden"}>
-      <div data-aos={"fade-down"} className={"absolute !top-[05px] !end-[200px]"}>
+      <div data-aos={"fade-down"} className={"absolute !top-[05px] !end-[100px]"}>
         <DownLine />
       </div>
       <div className={"mt-[252px]"}>

@@ -6,19 +6,16 @@ const AboutUS = () => {
 
 
   return (
-    <div className={"center h-screen  relative w-full max-w-[1240px] mx-auto"}>
-
-      <div data-aos={"fade-down"} className={"absolute !top-[90px] !end-[200px]"}>
-        <DownLine />
+    <div className={"center h-screen relative w-full max-w-[1240px] mx-auto"}>
+      <div data-aos={"fade-down"} className={"absolute !top-[90px] !end-[100px]"}>
+        <DownLine/>
       </div>
 
-
-      <div className={""}>
-
-        <div data-aos={"fade-right"} className={"text-h2 !font-cairo"}>
-          درباره ما
-        </div>
-        <div className={"flex justify-between gap-[61px]"}>
+      <div className={"flex w-full justify-between items-center gap-[61px]"}>
+        <div className={""}>
+          <div data-aos={"fade-right"} className={"text-h2 !font-cairo"}>
+            درباره ما
+          </div>
           <div data-aos={"fade-right"} className={" w-full max-w-[664px] text-caption text-bodyText2"}>
             <div className={""}>
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون
@@ -30,15 +27,14 @@ const AboutUS = () => {
               بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
             </div>
           </div>
-          <div data-aos={"fade-left"}>
-            <Image src={aboutUsBg} alt={'aboutUsBg'}/>
-          </div>
-
+        </div>
+        <div data-aos={"fade-left"}>
+          <Image src={aboutUsBg} alt={'aboutUsBg'}/>
         </div>
 
       </div>
-      <div data-aos={"fade-down"} className={"absolute !bottom-[-5px] !start-[200px]"}>
-        <DownLine />
+      <div data-aos={"fade-down"} className={"absolute !bottom-[-5px] !start-[100px]"}>
+        <DownLine/>
       </div>
     </div>
 

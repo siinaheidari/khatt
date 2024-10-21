@@ -5,7 +5,7 @@ const WhatWeDo = () => {
   return (
     <div className={" w-full max-w-[1240px] mx-auto center h-screen"}>
       <div className={"flex justify-between gap-x-[61px]"}>
-        <Image data-aos={"flip-left"} src={whatWeDo} height={696} alt="whatWeDo"
+        <Image data-aos={"zoom-in"} src={whatWeDo} height={696} alt="whatWeDo"
                className={"mx-auto "}/>
         <div className={"w-full text-caption text-bodyText2 space-y-[24px]"}>
           <div data-aos={"fade-up"} className={"text-h2 !font-cairo !text-black"}>

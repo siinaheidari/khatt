@@ -38,7 +38,7 @@ const Page = () => {
       <div className={"bg-[linear-gradient(#070707,#070707_68%,#fff_0,#fff)] "}>
         <div className={" w-full !max-w-[1240px] mx-auto px-[24px]"}>
           <SimpleParallax scale={1.2}>
-            <Image src={mainSectionBanner} alt="image"
+            <Image src={mainSectionBanner}  alt="image"
                    className={"mx-auto "}/>
           </SimpleParallax>
         </div>
