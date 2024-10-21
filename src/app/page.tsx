@@ -48,12 +48,13 @@ const Page = () => {
 
       </div>
       <div id="aboutUS" className={"!bg-white px-[24px]"}>
+
         <AboutUS/>
       </div>
       <div id="whatWeDo" className={"bg-white relative px-[24px] "}>
         <WhatWeDo/>
       </div>
-      <div id="services" className={" pt-[164px] pb-[100px]  px-[24px] "}>
+      <div id="services" className={" px-[24px] "}>
         <Services/>
       </div>
       <div id="contactUs" className={"bg-white  px-[24px] "}>

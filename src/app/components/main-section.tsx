@@ -23,14 +23,13 @@ const MainSection = () => {
 
         </div>
 
-        <div
-          className={"border border-neutral rounded-[20px] text-buttonTextLarge mt-[72px] mx-auto px-[24px] py-18 w-fit cursor-pointer hover:bg-primary-dark !text-white"}>
+        <div className={"border border-neutral rounded-[20px] group text-buttonTextLarge mt-[72px] mx-auto px-[24px] py-18 w-fit cursor-pointer hover:bg-primary-dark [&>a]:hover:!text-black duration-200 [&>a]:!text-white"}>
           <Link
-            duration={4000}
+            duration={5000}
             to="contactUs"
           >
             ما اینجاییم
-            <LineArrowLeft className="ms-24"/>
+            <LineArrowLeft className="ms-24 group-hover:!stroke-black stroke-white group-hover:-rotate-90 duration-200"/>
           </Link>
 
         </div>

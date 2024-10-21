@@ -28,6 +28,8 @@ module.exports = {
         },
 
         neutral:'#888',
+        neutralLightest:'#E7E7E7',
+        neutralDarker:'#5D5D5D',
         caption:'#5C5E65',
 
 

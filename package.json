@@ -27,6 +27,7 @@
     "react-parallax-tilt": "^1.7.246",
     "react-scroll": "^1.9.0",
     "react-stagger-text": "^1.1.0",
+    "react-toastify": "^10.0.6",
     "react-use": "^17.5.1",
     "simple-parallax-js": "^6.0.1",
     "styled-components": "^6.1.13"

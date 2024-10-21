@@ -13,7 +13,7 @@ const Header = () => {
     <>
       <div className={"flex justify-between items-center pt-[20px] pb-8 px-[39px]"}>
         <Image src={appLogo} alt={'appLogo'} className={""}/>
-        <div className={"flex justify-center gap-[32px] text-neutral text-buttonTextSmall [&>a]:text-white "}>
+        <div className={"flex justify-center gap-[32px] text-neutral text-buttonTextSmall [&>a]:text-neutral "}>
           <Link
             to="aboutUS"
           >
@@ -39,7 +39,7 @@ const Header = () => {
           </Link>
 
         </div>
-        <div className={"text-white text-buttonTextSmall"}>
+        <div className={"text-white text-buttonTextSmall hover:text-primary-dark cursor-pointer"}>
           EN
         </div>
       </div>

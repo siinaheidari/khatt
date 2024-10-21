@@ -1,12 +1,20 @@
 import aboutUsBg from "/public/images/aboutUsLogo.svg"
 import Image from "next/image";
+import DownLine from "@/templates/ui/down-line";
 
 const AboutUS = () => {
 
 
   return (
-    <div className={"center h-screen relative"}>
-      <div className={" w-full max-w-[1240px] mx-auto"}>
+    <div className={"center h-screen  relative w-full max-w-[1240px] mx-auto"}>
+
+      <div data-aos={"fade-down"} className={"absolute !top-[90px] !end-[200px]"}>
+        <DownLine />
+      </div>
+
+
+      <div className={""}>
+
         <div data-aos={"fade-right"} className={"text-h2 !font-cairo"}>
           درباره ما
         </div>
@@ -28,6 +36,9 @@ const AboutUS = () => {
 
         </div>
 
+      </div>
+      <div data-aos={"fade-down"} className={"absolute !bottom-[-5px] !start-[200px]"}>
+        <DownLine />
       </div>
     </div>
 
