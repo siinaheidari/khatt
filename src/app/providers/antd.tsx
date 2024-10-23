@@ -10,30 +10,28 @@ const AntdProvider: FC<PropsWithChildren> = ({children}) => {
       locale={faIR}
       theme={{
         token: {
-          colorBgLayout: "#070707",
+          colorBgLayout: "#fff",
           fontFamily: "var(--fontFamily)"
         },
 
         components: {
-
-
           Form: {
-            itemMarginBottom: 20,
+            itemMarginBottom: 42,
             verticalLabelMargin: 0,
             verticalLabelPadding: .7,
             fontSize: 12,
-          },
 
+          },
 
           Input: {
             controlHeight: 66,
             activeBorderColor: "#1890FF",
             colorPrimaryHover: "#1890FF",
             colorBorder: "#00000040",
-            hoverBorderColor:"#000000",
-            borderRadius: 20
+            hoverBorderColor: "#000000",
+            borderRadius: 20,
+            fontSize: 16,
           },
-
 
           Button: {
             controlHeight: 41,
@@ -44,23 +42,6 @@ const AntdProvider: FC<PropsWithChildren> = ({children}) => {
             fontWeight: 500
           },
 
-          Switch: {
-            colorPrimary: "#1890FF",
-          },
-
-
-          Checkbox: {
-            colorPrimary: "#1890FF",
-            colorPrimaryHover: "#1890FF"
-          },
-
-          Breadcrumb: {
-            lastItemColor: "#1890FF"
-          },
-          DatePicker: {
-            controlHeight: 41,
-            colorBorder: "#ADADAD",
-          }
         },
       }}
     >

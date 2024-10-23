@@ -93,7 +93,15 @@ module.exports = {
         buttonTextLarge: [ '1.75rem', { lineHeight: 'normal', fontWeight: 400 } ],
         bodyText1: [ '1.25rem', { lineHeight: 'normal', fontWeight: 400 } ],
         bodyText2: [ '1.5rem', { lineHeight: 'normal', fontWeight: 400 } ],
-
+        bodyXxg: [ '1rem', { lineHeight: 'normal', fontWeight: 400 } ],
+        bodyXm: [ '.875rem', { lineHeight: 'normal', fontWeight: 400 } ],
+        bodyMd: [ '1rem', { lineHeight: 'normal', fontWeight: 500 } ],
+        bodyLg: [ '.75rem', { lineHeight: 'normal', fontWeight: 400 } ],
+        bodySm: [ '.875rem', { lineHeight: 'normal', fontWeight: 400 } ],
+        buttonSm: [ '.875rem', { lineHeight: 'normal', fontWeight: 500 } ],
+        captionMd: [ '.75rem', { lineHeight: '180%', fontWeight: 500 } ],
+        captionLg: [ '.75rem', { lineHeight: '180%', fontWeight: 700 } ],
+        captionExtraLg: [ '.875rem', { lineHeight: '180%', fontWeight: 500 } ],
 
       },
       zIndex: {

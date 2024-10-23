@@ -1,45 +1,41 @@
 import { motion } from "framer-motion";
-import whatWeDo from "/public/images/what-we-do.svg"
+import whatWeDo from "/public/images/what-we-do.png"
 import Image from "next/image";
 import {useEffect, useRef, useState} from "react";
 import {clsx} from "clsx";
-import TypedComponent from "@/app/components/typed-component";
+import MarkdownContent from "@/app/components/typed-component";
 
 const WhatWeDo = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const containerRef = useRef(null); // برای گرفتن ارتفاع دقیق دیو والد
+  const containerRef = useRef(null);
 
-  console.log(activeIndex)
-
-  // تابعی که اسکرول رو مانیتور می‌کنه
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight; // مقدار اسکرول فعلی به همراه ارتفاع پنجره
+      const scrollPosition = window.scrollY + window.innerHeight;
       // @ts-ignore
-      const containerTop = containerRef.current.offsetTop; // موقعیت بالای دیو 500vh نسبت به صفحه
+      const containerTop = containerRef.current.offsetTop;
       // @ts-ignore
-      const containerHeight = containerRef.current.offsetHeight; // ارتفاع دیو والد (500vh)
+      const containerHeight = containerRef.current.offsetHeight;
 
-      // بررسی کنیم که وقتی دیو وارد صفحه شد، محاسبات اسکرول رو انجام بدیم
+
       if (scrollPosition > containerTop) {
-        const startScroll = containerTop; // شروع اسکرول دیو
-        const endScroll = containerTop + containerHeight; // پایان اسکرول دیو
-        const scrollRange = endScroll - startScroll; // بازه اسکرول دیو
+        const startScroll = containerTop;
+        const endScroll = containerTop + containerHeight;
+        const scrollRange = endScroll - startScroll;
 
-        const currentScroll = scrollPosition - startScroll; // مقدار اسکرولی که داخل دیو انجام شده
+        const currentScroll = scrollPosition - startScroll;
 
-        // تقسیم بندی اسکرول برای نمایش هر بخش
-        const quarter = scrollRange / 4; // هر بخش 1/4 از ارتفاع کل دیو 500vh
+        const quarter = scrollRange / 4;
 
         if (currentScroll < quarter) {
-          setActiveIndex(0); // بخش اول
+          setActiveIndex(0);
         } else if (currentScroll < 2 * quarter) {
-          setActiveIndex(1); // بخش دوم
+          setActiveIndex(1);
         } else if (currentScroll < 3 * quarter) {
-          setActiveIndex(2); // بخش سوم
+          setActiveIndex(2);
         } else {
-          setActiveIndex(3); // بخش چهارم
+          setActiveIndex(3);
         }
       }
     };
@@ -52,72 +48,52 @@ const WhatWeDo = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className={'bg-white h-[400vh] relative w-full'}>
-    <div className={" w-full max-w-[1240px] mx-auto center h-screen  !sticky top-0 flex items-center justify-start !overflow-hidden"}>
-      <div className={"flex justify-between gap-x-[61px]"}>
-        <Image data-aos={"zoom-in"} src={whatWeDo} height={696} alt="whatWeDo"
-               className={"mx-auto "}/>
-        <div className={"w-full text-caption text-bodyText2 space-y-[24px]"}>
-          <div data-aos={"fade-up"} className={"text-h2 !font-cairo !text-black"}>
-            ما چیکار می کنیم؟
-          </div>
-          <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            // style={{ width: '80%', height: '80%', backgroundColor: 'lightblue' }}
-          >
-          </motion.div>
-          <div data-aos-={"fade-up"} >
-            <div className={"text-primary  mt-24"}>
-              01.
+    <div ref={containerRef} className={'bg-white h-[400vh] relative w-full px-[24px]'}>
+      <div className={" w-full max-w-[1240px] mx-auto md:center md:h-screen !sticky top-0 flex items-center justify-start !overflow-hidden max-md:!mb-64"}>
+        <div className={"flex justify-between max-md:flex-col items-center gap-x-[61px]"}>
+          <Image layout={"responsive"} src={whatWeDo} alt="whatWeDo" className={"mx-auto  max-h-[671px] !min-h-[400px] w-full max-w-[474px] min-w-[374px] max-md:hidden"} placeholder={"blur"}/>
+          <div className={"w-full text-caption max-lg:text-bodyText1 text-bodyText2 space-y-[24px]"}>
+            <div className={"!text-h2 !font-cairo !text-black max-md:text-h3 max-lg:!text-h3 max-md:py-24 "}>
+              ما چیکار می کنیم؟
             </div>
-            <div className={"relative"}>
-              <div className=' text-black/10'>
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع.
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+            </motion.div>
+            <div className={clsx('opacity-10 transition-all duration-1000', {'!opacity-100': activeIndex >= 1})}>
+              <div className={"text-primary mt-24"}>
+                01.
               </div>
-
-              {activeIndex >= 1 &&
-                <TypedComponent className={clsx('absolute inset-0')} content={'              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع.'} />
-              }
-
-            </div>
-          </div>
-
-          <div data-ao-s={"fade-up"}  data-aos-duration="1000">
-            <div className={"text-primary  mt-24"}>
-              02.
-            </div>
-            <div className={"relative"}>
-              <div className=' text-black/10'>
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع.
+              <div className={""}>
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از  طراحان گرافیک است
               </div>
-
-              {activeIndex >= 2 &&
-                <TypedComponent className={clsx('absolute inset-0')} content={'              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع.'} />
-              }
             </div>
-          </div>
 
-          <div data-aos-={"fade-up"} >
-            <div className={"text-primary  "}>
-              03.
-            </div>
-            <div className={"relative"}>
-              <div className=' text-black/10'>
-                              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع.
+            <div  className={clsx('opacity-10 transition-all duration-1000', {'!opacity-100': activeIndex >= 2})} data-aos-duration="1000">
+              <div className={"text-primary  mt-24"}>
+                02.
               </div>
+              <div className={""}>
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله
+              </div>
+            </div>
 
-              {activeIndex >= 3 &&
-                <TypedComponent className={clsx('absolute inset-0')} content={'              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع.'} />
-              }
+            <div  className={clsx('opacity-10 transition-all duration-1000', {'!opacity-100': activeIndex >= 3})}>
+              <div className={"text-primary  "}>
+                03.
+              </div>
+              <div className={""}>
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون
+              </div>
             </div>
           </div>
+
         </div>
       </div>
-    </div>
     </div>
   );
 };
