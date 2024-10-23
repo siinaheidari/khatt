@@ -30,6 +30,7 @@ const AntdProvider: FC<PropsWithChildren> = ({children}) => {
             activeBorderColor: "#1890FF",
             colorPrimaryHover: "#1890FF",
             colorBorder: "#00000040",
+            hoverBorderColor:"#000000",
             borderRadius: 20
           },
 

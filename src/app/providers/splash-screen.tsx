@@ -34,7 +34,7 @@ const SplashScreen: FC<PropsWithChildren> = ({children}) => {
         </div>
       }
 
-      <div className={clsx({"invisible [&>div]:h-0": splashScreenVisible})}>
+      <div className={clsx({"invisible [&>div]:!h-0 [&>div]:!overflow-y-hidden": splashScreenVisible})}>
         {children}
       </div>
     </>

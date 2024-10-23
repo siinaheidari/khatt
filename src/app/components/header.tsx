@@ -12,8 +12,8 @@ const Header = () => {
   return (
     <>
       <div className={"flex justify-between items-center pt-[20px] pb-8 px-[39px]"}>
-        <Image src={appLogo} alt={'appLogo'} className={""}/>
-        <div className={"flex justify-center gap-[32px] text-neutral text-buttonTextSmall [&>a]:text-neutral "}>
+        <Image src={appLogo} alt={'appLogo'} className={"hover:transition-all hover:scale-110 hover:ease-in-out hover:duration-300 cursor-pointer"}/>
+        <div className={"flex justify-center gap-[48px] text-neutral text-[18px] [&>a]:text-neutral [&>a]:!font-[400]"}>
           <Link
             to="aboutUS"
           >
@@ -39,7 +39,7 @@ const Header = () => {
           </Link>
 
         </div>
-        <div className={"text-white text-buttonTextSmall hover:text-primary-dark cursor-pointer"}>
+        <div className={"text-white text-buttonTextSmall cursor-pointer font-[400] text-[18px]"}>
           EN
         </div>
       </div>

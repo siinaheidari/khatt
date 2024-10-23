@@ -23,7 +23,8 @@ const MainSection = () => {
 
         </div>
 
-        <div className={"border border-neutral rounded-[20px] group text-buttonTextLarge mt-[72px] mx-auto px-[24px] py-18 w-fit cursor-pointer hover:bg-primary-dark [&>a]:hover:!text-black duration-200 [&>a]:!text-white"}>
+
+        <div className={"border border-neutral rounded-[20px] group text-buttonTextLarge mt-[72px] mx-auto px-[24px] h-[70px] center w-fit cursor-pointer hover:bg-primary [&>a]:hover:!text-black duration-500 [&>a]:!text-neutralLightest"}>
           <Link
             duration={5000}
             to="contactUs"

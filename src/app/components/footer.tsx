@@ -23,12 +23,12 @@ const Footer = () => {
   console.log(icons)
 
   return (
-    <div className={"pt-[120px]"}>
+    <div className={""}>
       <div className={"w-full max-w-[1240px] mx-auto"}>
-        <div className={"mb-[84px]"}>
-          <Image src={aboutUsBg} alt={'aboutUsBg'} className={"mx-auto"}/>
+        <div className={"my-[64px]"}>
+          <Image src={aboutUsBg} alt={'aboutUsBg'} className={"mx-auto size-[87px]"}/>
         </div>
-        <div className={"flex justify-between gap-[32px] text-neutral text-buttonTextSmall px-32 w-full max-w-[860px] mx-auto [&>a]:text-neutral"}>
+        <div className={"flex gap-[5vw] lg:gap-[89px] justify-center text-neutral w-full mx-auto text-[18px] [&>a]:text-neutral [&>a]:!font-[400]"}>
           <Link
             to="aboutUS"
           >
@@ -54,7 +54,7 @@ const Footer = () => {
           </Link>
 
         </div>
-        <div className={"flex item-center gap-8 justify-between mt-[56px] mx-auto w-full max-w-[860px]"}>
+        <div className={"flex item-center justify-center mt-[56px] gap-[5vw] lg:gap-[89px]"}>
           <div onMouseEnter={() => setIcons("instagram")} onMouseLeave={() => setIcons("")}>
             {icons!=="instagram"?
               <Instagram/>

@@ -38,14 +38,14 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
 
   return (
 
-    <html className={shabnamFont?.variable + " " + cairo.variable + ' !min-h-dvh !overflow-ellipsis'}>
+    <html className={shabnamFont?.variable + " " + cairo.variable + ' !min-h-dvh'}>
     <body>
-    <div>
+
       <AosProvider>
         <AntdRegistry>
           <AntdProvider>
             <SplashScreen>
-              <Layout className={"!min-h-dvh overflow-x-hidden !scroll-smooth !overflow-ellipsis"}>
+              <Layout className={"!min-h-dvh "}>
                 {children}
               </Layout>
             </SplashScreen>
@@ -53,7 +53,6 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
         </AntdRegistry>
       </AosProvider>
 
-    </div>
 
 
     </body>
