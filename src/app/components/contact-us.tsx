@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {clsx} from "clsx";
 import DownLine from "@/templates/ui/down-line";
 import {Tick} from "@/templates/icons/tick";
+import {toast} from "react-toastify";
 
 
 type TServices = {
@@ -12,7 +13,7 @@ type TServices = {
   id: string
 }
 
-const { TextArea } = Input;
+const {TextArea} = Input;
 
 const ContactUs = () => {
   const [formRef] = Form.useForm();
@@ -29,7 +30,7 @@ const ContactUs = () => {
       setSaveError([])
       await formRef.validateFields()
       if (!selectedServices.length) {
-        alert("ssssssssssssss")
+        toast.error("حداقل یک مورد را انتخاب نمایید")
       }
     } catch (e: any) {
       setSaveError(e?.errorFields?.map((item: any) => item?.name[0]))
@@ -214,6 +215,17 @@ const ContactUs = () => {
                       required: true,
                       message: 'ایمیل را وارد کنید'
                     },
+                    {
+                      validator: (_, value) => {
+                        if (value.length) {
+                          if (!/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(value)) {
+                            setSaveError(current => ([...current, 'email']))
+                            return Promise.reject(new Error('ایمیل معتبر وارد کنید'));
+                          }
+                        }
+                        return Promise.resolve();
+                      },
+                    }
                   ]}
                 >
                   <Input onChange={(e) => {
@@ -226,10 +238,11 @@ const ContactUs = () => {
                 </Form.Item>
               </FloatLabel>
 
-              <FloatLabel label={'توضیحات پروژه'} name={'description'} className={clsx("col-span-2", {"[&>label]:!text-red-500": saveError.includes("description")})}>
+              <FloatLabel label={'توضیحات پروژه'} name={'description'}
+                          className={clsx("col-span-2", {"[&>label]:!text-red-500": saveError.includes("description")})}>
                 <Form.Item
                   name={'description'}>
-                  <TextArea className={'w-full'} rows={4} />
+                  <TextArea className={'w-full'} rows={4}/>
 
                 </Form.Item>
               </FloatLabel>

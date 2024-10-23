@@ -3,13 +3,14 @@ import "./globals.css";
 import {Layout} from "antd";
 
 
-import {Cairo, Poppins} from "next/font/google";
+import {Cairo} from "next/font/google";
 import localFont from "next/font/local";
 import {AntdRegistry} from "@ant-design/nextjs-registry";
 import AntdProvider from "./providers/antd";
 import SplashScreen from "./providers/splash-screen";
 import AosProvider from "./providers/aos";
-
+import 'react-toastify/ReactToastify.min.css';
+import {ToastContainer} from "react-toastify";
 
 
 const cairo = Cairo({subsets: ["latin"], variable: "--cairo", weight: ["300", "400", "500", "700"]})
@@ -41,18 +42,25 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
     <html className={shabnamFont?.variable + " " + cairo.variable + ' !min-h-dvh'}>
     <body>
 
-      <AosProvider>
-        <AntdRegistry>
-          <AntdProvider>
-            <SplashScreen>
-              <Layout className={"!min-h-dvh "}>
-                {children}
-              </Layout>
-            </SplashScreen>
-          </AntdProvider>
-        </AntdRegistry>
-      </AosProvider>
-
+    <AosProvider>
+      <ToastContainer position={'top-right'}
+                      autoClose={4000}
+                      rtl
+                      draggable
+                      theme="colored"
+                      closeButton
+                      bodyClassName="text-[0.875rem] font-dynamicFont"
+                      stacked/>
+      <AntdRegistry>
+        <AntdProvider>
+          <SplashScreen>
+            <Layout className={"!min-h-dvh "}>
+              {children}
+            </Layout>
+          </SplashScreen>
+        </AntdProvider>
+      </AntdRegistry>
+    </AosProvider>
 
 
     </body>
