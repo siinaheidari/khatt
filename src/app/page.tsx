@@ -54,7 +54,7 @@ const Page = () => {
       </div>
 
 
-      <div ref={targetRef} className={" "}>
+      <div id="whatWeDo" ref={targetRef} className={" "}>
           <WhatWeDo/>
       </div>
 
