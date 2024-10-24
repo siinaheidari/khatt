@@ -74,7 +74,7 @@ const Page = () => {
         <div className={" w-full !max-w-[1240px] mx-auto px-[24px]"}>
           <SimpleParallax scale={1.2}>
             <Image src={mainSectionBanner} alt="image"
-                   className={"mx-auto "}/>
+                   className={"mx-auto max-md:h-[500px] max-md:object-cover "}/>
           </SimpleParallax>
         </div>
 
