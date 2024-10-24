@@ -20,7 +20,7 @@ const Footer = () => {
 
   const [icons, setIcons] = useState("")
 
-  console.log(icons)
+
 
   return (
     <div className={""}>

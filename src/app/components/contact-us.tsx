@@ -49,7 +49,6 @@ const ContactUs = () => {
   }
 
 
-  console.log(loading)
 
 
   const services: TServices[] = [
@@ -118,7 +117,6 @@ const ContactUs = () => {
   }, [mobileWatch]);
 
 
-  console.log(loading)
   return (
     <div className={" mb-[52px] relative w-full max-w-[1240px] mx-auto overflow-hidden"}>
 
