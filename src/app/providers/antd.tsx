@@ -17,9 +17,8 @@ const AntdProvider: FC<PropsWithChildren> = ({children}) => {
         components: {
           Form: {
             itemMarginBottom: 42,
-            verticalLabelMargin: 0,
-            verticalLabelPadding: .7,
             fontSize: 12,
+
 
           },
 

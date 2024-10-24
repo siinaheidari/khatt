@@ -155,3 +155,7 @@ a:hover {
 .Toastify__toast-body{
   font-family: var(--fontFamily);
 }
+.ant-form-item-explain-error {
+
+  font-weight: 500;
+}

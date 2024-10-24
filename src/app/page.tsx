@@ -10,7 +10,7 @@ import SimpleParallax from "simple-parallax-js";
 import Services from "./components/services";
 import ContactUs from "./components/contact-us";
 import Footer from "./components/footer";
-import mainSectionBanner from "/public/images/main-Section.svg"
+import mainSectionBanner from "/public/images/main-Section.png"
 import {useEffect, useRef, useState} from "react";
 
 import WhatWeDo from "@/app/components/what-we-do";
