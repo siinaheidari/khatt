@@ -7,6 +7,6 @@ const i18nConfig: Config = {
   serverSetCookie: 'always'
 } as const;
 
-export type TLocale = (typeof i18nConfig)['locales'][number]
+
 
 export default i18nConfig;
