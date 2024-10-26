@@ -7,6 +7,7 @@ import Image from "next/image";
 import {Link} from "react-scroll";
 import {useTranslation} from "react-i18next";
 import {LanguageSwitcher} from "@/app/[locale]/components/language-switcher";
+import {Suspense} from "react";
 
 const Header = () => {
   const {t} = useTranslation('common')
@@ -42,9 +43,10 @@ const Header = () => {
           </Link>
 
         </div>
-        <div className={""}>
-         <LanguageSwitcher/>
-        </div>
+        <Suspense>
+          <LanguageSwitcher/>
+        </Suspense>
+
       </div>
       <div className={"bg-[linear-gradient(90deg,#5D5D5D_0%,#888_50%,#5D5D5D_100%)] w-full h-[1px]"}/>
     </>
