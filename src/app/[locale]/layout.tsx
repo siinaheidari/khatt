@@ -11,6 +11,7 @@ import {ToastContainer} from "react-toastify";
 import TranslationsProvider from "@/app/providers/translation-provider";
 import initTranslations from "@/i18n";
 import {FC, PropsWithChildren} from "react";
+import i18nConfig from "@/i18n-config";
 
 const poppins = Poppins({subsets: ['latin'], variable: '--poppins', weight: ['300', '400', '500', '700']});
 
@@ -37,13 +38,17 @@ const shabnamFont = localFont({
 
 const namespaces = [
   'common',
-  'rulesMessage',
-  'requestMessages'
+
 ];
+
+export const generateStaticParams = async () => i18nConfig?.locales?.map(locale => ({ locale }));
 
 
 const RootLayout: FC<PropsWithChildren & { params: any }> = async ({children, params: {locale}}) => {
   const {resources, i18n: {dir}} = await initTranslations(locale, namespaces);
+
+
+
 
   return (
     <html lang={locale} dir={dir()}
