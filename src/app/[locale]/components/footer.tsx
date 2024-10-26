@@ -1,19 +1,21 @@
 import aboutUsBg from "/public/images/aboutUsLogo.svg"
 
 import Image from "next/image";
-import {Instagram} from "../../templates/icons/instagram";
-import {Linkedin} from "../../templates/icons/linkedin";
-import {Telegram} from "../../templates/icons/telegram";
-import {XIcon} from "../../templates/icons/x";
-import {Mailbox} from "../../templates/icons/mailbox";
-import {Youtube} from "../../templates/icons/youtube";
-import {YoutubeFill} from "@/templates/icons/youtube-fill";
+
 import {useState} from "react";
-import {InstagramFill} from "@/templates/icons/instagram-fill";
-import {LinkedinFill} from "@/templates/icons/linkedin-fill";
-import {XFill} from "@/templates/icons/x-fill";
+
 //@ts-ignore
 import {Link} from "react-scroll";
+import {InstagramFill} from "@/templates/icons/instagram-fill";
+import {Instagram} from "@/templates/icons/instagram";
+import {LinkedinFill} from "@/templates/icons/linkedin-fill";
+import {Linkedin} from "@/templates/icons/linkedin";
+import {Telegram} from "@/templates/icons/telegram";
+import {XIcon} from "@/templates/icons/x";
+import {XFill} from "@/templates/icons/x-fill";
+import {Youtube} from "@/templates/icons/youtube";
+import {YoutubeFill} from "@/templates/icons/youtube-fill";
+import {Mailbox} from "@/templates/icons/mailbox";
 
 
 const Footer = () => {

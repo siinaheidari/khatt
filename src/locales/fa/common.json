@@ -1,0 +1,24 @@
+{
+  "aboutUs": "درباره ما",
+  "whatWeDo": "خدمات",
+  "test": "ما چیکار می کنیم؟",
+  "services": "نمونه کارها",
+  "contactUs": "تماس با ما",
+  "phone number": "شماره تماس",
+  "full name": "نام و نام خانوادگی",
+  "email": "ایمیل",
+  "description": "توضیحات پروژه",
+  "Let’s Talk": "ما اینجاییم",
+  "Send": "ارسال",
+
+
+  "Please enter the full name": "لطفا نام و نام خانوادگی را وارد نمایید",
+  "Please enter the phone number": "شماره تماس را وارد نمایید",
+  "Please enter the email": "ایمیل را وارد نمایید",
+  "Please enter the valid email": "ایمیل معتبر وارد کنید",
+  "Please select at least one item": "حداقل یک مورد را انتخاب کنید",
+
+
+  "Please complete the form information": "لطفا اطلاعات فرم را کامل نمایید",
+  "Your request has been successfully registered": "درخواست شما با موفقیت ثبت شد"
+}

@@ -1,25 +1,25 @@
 'use client'
 
-import Header from "./components/header";
-import MainSection from "./components/main-section";
-import PageParticles from "./components/particles";
+
 import Tilt from 'react-parallax-tilt';
-import AboutUS from "./components/about-us";
 import Image from "next/image";
 import SimpleParallax from "simple-parallax-js";
-import Services from "./components/services";
-import ContactUs from "./components/contact-us";
-import Footer from "./components/footer";
 import mainSectionBanner from "/public/images/main-Section.png"
 import {useEffect, useRef, useState} from "react";
-
-import WhatWeDo from "@/app/components/what-we-do";
 import Lottie from "lottie-react";
-import upLottie from "../../public/lottie/up.json";
+import upLottie from "../../../public/lottie/up.json";
 import {clsx} from "clsx";
+import Header from './components/header';
+import PageParticles from "@/app/[locale]/components/particles";
+import MainSection from "@/app/[locale]/components/main-section";
+import AboutUS from "@/app/[locale]/components/about-us";
+import WhatWeDo from "@/app/[locale]/components/what-we-do";
+import Services from "@/app/[locale]/components/services";
+import ContactUs from "@/app/[locale]/components/contact-us";
+import Footer from "@/app/[locale]/components/footer";
+
 
 const Page = () => {
-
 
   const targetRef = useRef<any>();
   // const {scrollYProgress} = useScroll({target: targetRef})
@@ -33,11 +33,10 @@ const Page = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
 
-      if (scrollPosition >1300) {
+      if (scrollPosition > 1300) {
 
         setShowScrollTop(true)
-      }
-      else {
+      } else {
         setShowScrollTop(false)
       }
     };
@@ -89,7 +88,6 @@ const Page = () => {
       </div>
 
 
-
       <div id="services" className={"bg-black px-[24px] "}>
         <Services/>
       </div>
@@ -100,7 +98,8 @@ const Page = () => {
         <Footer/>
       </div>
 
-      <div onClick={() => window.scrollTo(0, 0)} className={ clsx("opacity-0  cursor-pointer transition-all duration-1000",{"!opacity-100 fixed bottom-40 left-24":showScrollTop}) }>
+      <div onClick={() => window.scrollTo(0, 0)}
+           className={clsx("opacity-0  cursor-pointer transition-all duration-1000 z-[900]", {"!opacity-100 fixed bottom-40 left-24": showScrollTop})}>
         <Lottie className={" w-full max-w-[40px] "} animationData={upLottie}/>
       </div>
 

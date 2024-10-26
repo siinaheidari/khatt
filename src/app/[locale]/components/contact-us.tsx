@@ -1,5 +1,5 @@
-import {Form, Input, Spin} from "antd";
-import FloatLabel from "../../templates/ui/float-label";
+import {Button, Form, Input, Spin} from "antd";
+
 import {DoubleCheck} from "@/templates/icons/double-check";
 import {useEffect, useState} from "react";
 import {clsx} from "clsx";
@@ -7,6 +7,8 @@ import DownLine from "@/templates/ui/down-line";
 import {Tick} from "@/templates/icons/tick";
 import {toast} from "react-toastify";
 import axios from "axios";
+import FloatLabel from "@/templates/ui/float-label";
+import {useTranslation} from "react-i18next";
 
 type TServices = {
   title: string,
@@ -19,13 +21,13 @@ const ContactUs = () => {
   const [formRef] = Form.useForm();
   const [selectedServices, setSelectedServices] = useState<string[]>([])
   const [saveError, setSaveError] = useState<string[]>([]);
-  const mobileWatch = Form.useWatch("phone", formRef)
+  const mobileWatch = Form.useWatch("phoneNumber", formRef)
+  const {t} = useTranslation('common')
 
   const [loading, setLoading] = useState(false);
 
   const handleSelectedServices = (value: TServices) => setSelectedServices(current => current?.includes(value?.id) ?
     current?.filter(item => item !== value?.id) : ([...current, value?.id]));
-
 
   const handleSubmit = async () => {
     try {
@@ -36,19 +38,17 @@ const ContactUs = () => {
       const values = formRef.getFieldsValue(true)
       await axios.post(`https://jsonplaceholder.typicode.com/users`, {values})
         .then(res => {
-          toast.success("درخواست شما با موفقیت ثبت شد")
-
+          toast.success(t('Your request has been successfully registered'))
+          formRef.resetFields()
         })
 
     } catch (e: any) {
       setSaveError(e?.errorFields?.map((item: any) => item?.name[0]))
-      // toast.error("درخواست شما موفقیت آمیز نبود")
+      toast.error(t("Please complete the form information"))
     } finally {
       setLoading(false)
     }
   }
-
-
 
 
   const services: TServices[] = [
@@ -100,16 +100,16 @@ const ContactUs = () => {
     if (mobileWatch) {
       formRef.setFields([
         {
-          name: 'phone',
+          name: 'phoneNumber',
           value: mobileWatch.replace(/\D/g, ''),
           errors: [""]
         }
       ])
 
-      formRef.validateFields(["phone"]).then(() => {
-        setSaveError(current => current.filter(item => item !== "phone"))
+      formRef.validateFields(["phoneNumber"]).then(() => {
+        setSaveError(current => current.filter(item => item !== "phoneNumber"))
       }).catch(() => {
-        setSaveError(current => ([...current, 'phone']))
+        setSaveError(current => ([...current, 'phoneNumber']))
       })
     }
 
@@ -128,7 +128,7 @@ const ContactUs = () => {
 
 
           <div data-aos={"fade-up"} className={"!text-h2 !font-cairo mb-[80px] max-md:!text-h3"}>
-            تماس با ما
+            {t('contactUs')}
           </div>
 
           <Form
@@ -147,7 +147,7 @@ const ContactUs = () => {
           >
             <Spin spinning={loading}>
               <div data-aos={"fade-left"} className={"md:grid md:grid-cols-2 gap-x-[69px]"}>
-                <FloatLabel label={'نام و نام خانوادگی'} name={'firstName'}
+                <FloatLabel label={t('full name')} name={'firstName'}
                             className={clsx({"[&>label]:!text-red-500 max-md:col-span-2": saveError.includes("firstName")})}>
                   <Form.Item
                     name={'firstName'}
@@ -155,7 +155,7 @@ const ContactUs = () => {
                     rules={[
                       {
                         required: true,
-                        message: 'نام و نام خانوادگی را وارد کنید'
+                        message: t('Please enter the full name')
                       },
                     ]}
                   >
@@ -169,21 +169,21 @@ const ContactUs = () => {
                     />
                   </Form.Item>
                 </FloatLabel>
-                <FloatLabel label={'شماره تماس'} name={'phone'}
-                            className={clsx({"[&>label]:!text-red-500": saveError.includes("phone")})}>
+                <FloatLabel label={t('phone number')} name={'phoneNumber'}
+                            className={clsx({"[&>label]:!text-red-500": saveError.includes("phoneNumber")})}>
                   <Form.Item
-                    name={'phone'}
+                    name={'phoneNumber'}
                     validateFirst
                     rules={[
                       {
                         required: true,
-                        message: 'شماره تماس را وارد کنید'
+                        message: t('Please enter the phone number')
                       },
                       {
                         validator: (_, value) => {
                           if (value.length) {
                             if (value.length > 1 && !value.startsWith('09')) {
-                              setSaveError(current => ([...current, 'phone']))
+                              setSaveError(current => ([...current, 'phoneNumber']))
                               return Promise.reject(new Error('شماره موبایل باید با 09 شروع شود'));
                             }
                           }
@@ -198,7 +198,7 @@ const ContactUs = () => {
                         validator: (_, value) => {
                           if (value.length) {
                             if (value.length < 11) {
-                              setSaveError(current => ([...current, 'phone']))
+                              setSaveError(current => ([...current, 'phoneNumber']))
                               return Promise.reject(new Error('شماره همراه معتبر وارد کنید'));
                             }
                           }
@@ -209,9 +209,9 @@ const ContactUs = () => {
                   >
                     <Input onChange={(e) => {
                       if (e?.target?.value) {
-                        setSaveError(current => current?.filter(item => item !== "phone"))
+                        setSaveError(current => current?.filter(item => item !== "phoneNumber"))
                       } else {
-                        setSaveError(current => ([...current, 'phone']))
+                        setSaveError(current => ([...current, 'phoneNumber']))
                       }
                     }}
                            className={'w-full'}
@@ -220,7 +220,7 @@ const ContactUs = () => {
                     />
                   </Form.Item>
                 </FloatLabel>
-                <FloatLabel label={'ایمیل'} name={'email'}
+                <FloatLabel label={t('email')} name={'email'}
                             className={clsx({"[&>label]:!text-red-500": saveError.includes("email")})}>
                   <Form.Item
                     name={'email'}
@@ -228,14 +228,14 @@ const ContactUs = () => {
                     rules={[
                       {
                         required: true,
-                        message: 'ایمیل را وارد کنید'
+                        message: t('Please enter the email')
                       },
                       {
                         validator: (_, value) => {
                           if (value.length) {
                             if (!/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(value)) {
                               setSaveError(current => ([...current, 'email']))
-                              return Promise.reject(new Error('ایمیل معتبر وارد کنید'));
+                              return Promise.reject(new Error(t('Please enter the valid email')));
                             }
                           }
                           return Promise.resolve();
@@ -253,7 +253,7 @@ const ContactUs = () => {
                   </Form.Item>
                 </FloatLabel>
 
-                <FloatLabel label={'توضیحات پروژه'} name={'description'}
+                <FloatLabel label={t('description')} name={'description'}
                             className={clsx("col-span-2", {"[&>label]:!text-red-500": saveError.includes("description")})}>
                   <Form.Item
                     name={'description'}>
@@ -271,7 +271,7 @@ const ContactUs = () => {
                          rules={[
                            {
                              required: true,
-                             message: 'حداقل یک مورد را انتخاب کنید'
+                             message: t('Please select at least one item')
                            },
                          ]}
               >
@@ -307,12 +307,23 @@ const ContactUs = () => {
 
 
               <div className={"mb-32 w-full "}>
-                <div onClick={handleSubmit}
-                     className={"max-md:mx-auto border border-black py-16 px-24 group rounded-[20px] text-buttonTextSmall flex items-center gap-24 w-[155px] h-[68px] mt-[56px] hover:bg-primary cursor-pointer transition-all"}>
-                  ارسال
-                  <DoubleCheck className={"text-[32px] group-hover:text-[36px] stroke-black "}/>
+                <Button onClick={handleSubmit}
 
-                </div>
+
+                        className={"max-md:mx-auto border py-16 group mt-20"}
+                >
+                  <div
+                    className={"mx-auto flex justify-between gap-24 items-center pe-[24px] ps-[20px] w-[135px] h-[68px] "}>
+                    <div>
+                      {t("Send")}
+                    </div>
+
+                    <DoubleCheck className={"text-[32px] group-hover:text-[36px] stroke-black "}/>
+
+                  </div>
+
+
+                </Button>
               </div>
             </Spin>
           </Form>

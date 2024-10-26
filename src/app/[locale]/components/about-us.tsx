@@ -1,9 +1,10 @@
 import aboutUsBg from "/public/images/aboutUsLogo.svg"
 import Image from "next/image";
 import DownLine from "@/templates/ui/down-line";
+import {useTranslation} from "react-i18next";
 
 const AboutUS = () => {
-
+  const {t} = useTranslation('common')
 
   return (
     <div className={"center min-h-screen relative w-full max-w-[1240px] mx-auto !overflow-hidden"}>
@@ -15,7 +16,7 @@ const AboutUS = () => {
       <div className={"flex w-full max-md:flex-col justify-between items-center gap-[61px] max-md:!py-[180px]"}>
         <div className={""}>
           <div data-aos={"fade-right"} className={"text-h2 !font-cairo max-md:text-h3  max-md:pb-24"}>
-            درباره ما
+            {t('aboutUs')}
           </div>
           <div data-aos={"fade-right"} className={" w-full max-w-[664px] text-caption text-bodyText2  max-md:text-bodyText1"}>
             <div className={""}>

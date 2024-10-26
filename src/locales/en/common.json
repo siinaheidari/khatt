@@ -1,0 +1,26 @@
+{
+ "aboutUs": "about us",
+ "whatWeDo": "what we do?",
+ "test": "what we do?",
+ "services": "our services",
+ "contactUs": "contact us",
+ "phone number": "phone number",
+ "full name": "full name",
+ "email": "email",
+ "description": "description",
+ "Let’s Talk": "Let’s Talk",
+ "Send": "Send",
+
+
+ "Please enter the full name": "Please enter the full name",
+ "Please enter the phone number": "Please enter the phone number",
+ "Please enter the email": "Please enter the email",
+ "Please enter the valid email": "Please enter the valid email",
+ "Please select at least one item": "Please select at least one item",
+
+
+
+ "Please complete the form information": "Please complete the form information",
+ "Your request has been successfully registered": "Your request has been successfully registered"
+
+}

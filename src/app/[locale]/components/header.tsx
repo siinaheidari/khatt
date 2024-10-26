@@ -1,13 +1,15 @@
 'use client'
 
-import appLogo from "../../../public/images/appLogo.svg"
+import appLogo from "../../../../public/images/appLogo.svg"
 import Image from "next/image";
 
 //@ts-ignore
 import {Link} from "react-scroll";
+import {useTranslation} from "react-i18next";
+import {LanguageSwitcher} from "@/app/[locale]/components/language-switcher";
 
 const Header = () => {
-
+  const {t} = useTranslation('common')
 
   return (
     <>
@@ -17,30 +19,31 @@ const Header = () => {
           <Link
             to="aboutUS"
           >
-            درباره ما
+            {t('aboutUs')}
+
           </Link>
 
           <Link
             to="whatWeDo"
           >
-            خدمات
+            {t('whatWeDo')}
           </Link>
 
           <Link
             to="services"
           >
-            نمونه کارها
+            {t('services')}
           </Link>
 
           <Link
             to="contactUs"
           >
-            تماس با ما
+            {t('contactUs')}
           </Link>
 
         </div>
-        <div className={"text-white text-buttonTextSmall cursor-pointer font-[400] text-[18px]"}>
-          EN
+        <div className={""}>
+         <LanguageSwitcher/>
         </div>
       </div>
       <div className={"bg-[linear-gradient(90deg,#5D5D5D_0%,#888_50%,#5D5D5D_100%)] w-full h-[1px]"}/>

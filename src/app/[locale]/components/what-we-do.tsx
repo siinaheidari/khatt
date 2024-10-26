@@ -3,10 +3,11 @@ import whatWeDo from "/public/images/what-we-do.png"
 import Image from "next/image";
 import {useEffect, useRef, useState} from "react";
 import {clsx} from "clsx";
+import {useTranslation} from "react-i18next";
 
 const WhatWeDo = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const {t} = useTranslation('common')
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -56,7 +57,7 @@ const WhatWeDo = () => {
                  placeholder={"blur"}/>
           <div className={"w-full text-caption max-lg:text-bodyText1 text-bodyText2 space-y-[24px]"}>
             <div className={"!text-h2 !font-cairo !text-black max-md:text-h3 max-lg:!text-h3 max-md:py-24 "}>
-              ما چیکار می کنیم؟
+              {t('test')}
             </div>
             <motion.div
               key={activeIndex}

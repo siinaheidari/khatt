@@ -7,15 +7,13 @@
   --fontFamily: var(--shabnam);
 }
 
-/*
-html[lang='en'] {
-  --fontFamily: var(--cairo)
-}
-*/
-
 
 html {
   font-family: var(--fontFamily);
+}
+
+html[lang='en'] {
+  --fontFamily: var(--poppins)
 }
 
 
@@ -74,12 +72,15 @@ a:hover {
   @apply text-[#f6f6f6] !important
 }
 
+@layer utilities {
+  .d-rtl {
+    direction: rtl;
+  }
 
-/*
-::-webkit-scrollbar {
-  display: none;
+  .d-ltr {
+    direction: ltr;
+  }
 }
-*/
 
 .ant-form-item-explain-error {
   @apply ms-16 text-[14px] !important
@@ -90,72 +91,10 @@ a:hover {
 }
 
 
-/*
-.Toastify {
-  --toastify-color-error: #FFE4E4 !important;
-  --toastify-color-success: #DAF4F0 !important;
-  --toastify-color-warning: #FFF8E1 !important;
-  --toastify-color-info: #DFF0FA !important;
-
-  .Toastify__toast--error {
-    &,
-    .Toastify__close-button {
-      color: #AF233A !important;
-    }
-
-    .Toastify__progress-bar {
-      background-color: rgba(195, 0, 0, .5) !important;
-    }
-  }
-
-  .Toastify__toast--success {
-    &,
-    .Toastify__close-button {
-      color: #00966D !important;
-    }
-
-    .Toastify__progress-bar {
-      background-color: rgba(0, 150, 109, .5) !important;
-    }
-  }
-
-  .Toastify__toast--warning {
-    &,
-    .Toastify__close-button {
-      color: #A9791C !important;
-    }
-
-    .Toastify__progress-bar {
-      background-color: rgba(169, 121, 28, .5) !important;
-    }
-  }
-
-  .Toastify__toast--info {
-    &,
-    .Toastify__close-button {
-      color: #299CDD !important;
-    }
-
-    .Toastify__progress-bar {
-      background-color: rgba(41, 156, 221, .5) !important;
-    }
-  }
-
-  .Toastify__toast-icon {
-    width: 18px;
-    align-self: flex-start;
-  }
-
-  .Toastify__close-button {
-    padding-top: 6px;
-  }
-}
-*/
-
-.Toastify__toast-body{
+.Toastify__toast-body {
   font-family: var(--fontFamily);
 }
-.ant-form-item-explain-error {
 
+.ant-form-item-explain-error {
   font-weight: 500;
 }

@@ -1,7 +1,11 @@
 import Lottie from "lottie-react";
-import appLottie from "../../../public/lottie/pc.json"
+import appLottie from "../../../../public/lottie/pc.json"
+import {useTranslation} from "react-i18next";
+
 
 const Services = () => {
+  const {t} = useTranslation('common')
+
   return (
     <div className={" w-full max-w-[1240px] mx-auto pb-[88px] text-white text-bodyText2 overflow-hidden"}>
 
@@ -12,7 +16,7 @@ const Services = () => {
         </div>
         <div>
           <div data-aos={"fade-up"} className={"!text-h2 !font-cairo text-center max-md:!text-h3 max-md:!mb-24"}>
-            خدمات ما
+            {t('services')}
           </div>
           <div data-aos={"fade-up"} className={" !font-cairo text-center text-bodyText1 max-md:text-bodyText1"}>
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است

@@ -1,13 +1,18 @@
+'use client'
+
 import {ConfigProvider} from "antd";
 import faIR from "antd/locale/fa_IR";
+import enUs from "antd/locale/en_US";
 import {FC, PropsWithChildren} from "react";
+import {useTranslation} from "react-i18next";
 
 const AntdProvider: FC<PropsWithChildren> = ({children}) => {
+  const {i18n: {dir}} = useTranslation()
 
   return (
     <ConfigProvider
-      direction={"rtl"}
-      locale={faIR}
+      direction={dir()}
+      locale={dir() === 'ltr' ? faIR : enUs}
       theme={{
         token: {
           colorBgLayout: "#fff",
@@ -33,12 +38,16 @@ const AntdProvider: FC<PropsWithChildren> = ({children}) => {
           },
 
           Button: {
-            controlHeight: 41,
-            colorPrimary: "#1890FF",
-            defaultBorderColor: "#1890FF",
-            defaultColor: "#1890FF",
-            defaultBg: "#F0F2F5",
-            fontWeight: 500
+            controlHeight: 68,
+            defaultHoverBg: '#FFD60A',
+            defaultHoverColor: '#070707',
+            defaultHoverBorderColor: '#070707',
+            defaultBorderColor: '#070707',
+            defaultColor: '#070707',
+
+            fontWeight: 500,
+            borderRadius: 20,
+            fontSize:20
           },
 
         },

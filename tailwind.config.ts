@@ -116,7 +116,8 @@ module.exports = {
         9: '0.9'
       },
       fontFamily:{
-        cairo:'var(--cairo)'
+        cairo:'var(--cairo)',
+        poppins:'var(--poppins)',
       }
     }
   },
