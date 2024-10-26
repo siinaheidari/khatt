@@ -4,9 +4,7 @@ const i18nConfig: Config = {
   locales: [ 'en', 'fa' ],
   defaultLocale: 'fa',
   localeDetector: () => 'fa',
-  serverSetCookie: 'always',
-
-  basePath: '/khatt'
+  serverSetCookie: 'always'
 } as const;
 
 
