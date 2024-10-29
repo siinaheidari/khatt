@@ -2,19 +2,8 @@
 const nextConfig = {
   productionBrowserSourceMaps: false,
   swcMinify: true,
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'unsafe-inline' 'inline-speculation-rules';",
-          },
-        ],
-      },
-    ];
-  },
+  output: 'export',
+  
 };
 
 export default nextConfig;
