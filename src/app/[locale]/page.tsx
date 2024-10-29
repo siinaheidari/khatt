@@ -4,7 +4,7 @@
 import Tilt from 'react-parallax-tilt';
 import Image from "next/image";
 import SimpleParallax from "simple-parallax-js";
-import mainSectionBanner from "/public/images/main-Section.png"
+import mainSectionBanner from "/public/images/main-Section (3).jpg"
 import {useEffect, useRef, useState} from "react";
 import Lottie from "lottie-react";
 import upLottie from "../../../public/lottie/up.json";
@@ -73,7 +73,7 @@ const Page = () => {
         <div className={" w-full !max-w-[1240px] mx-auto px-[24px]"}>
           <SimpleParallax scale={1.2}>
             <Image src={mainSectionBanner} alt="image"
-                   className={"mx-auto max-md:h-[500px] max-md:object-cover "}/>
+                   className={"mx-auto aspect-auto max-md:h-[500px] max-md:object-cover "}/>
           </SimpleParallax>
         </div>
 

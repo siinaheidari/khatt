@@ -79,7 +79,7 @@ const WhatWeDo = () => {
       <div
         className={" w-full max-w-[1240px] mx-auto md:center md:h-screen !sticky top-0 flex items-center justify-start !overflow-hidden max-md:!mb-64"}>
         <div className={"flex justify-between max-md:flex-col items-center gap-x-[61px]"}>
-          <Image layout={"responsive"} src={whatWeDo} alt="whatWeDo"
+          <Image src={whatWeDo} alt="whatWeDo"
                  className={"mx-auto aspect-[3/4] max-h-[671px] !min-h-[400px] w-full max-w-[474px] min-w-[374px] max-md:hidden"}
                  placeholder={"blur"}/>
           <div className={"w-full text-caption max-lg:text-bodyText1 text-bodyText2 space-y-[24px]"}>
