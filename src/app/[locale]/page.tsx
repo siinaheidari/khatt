@@ -56,8 +56,7 @@ const Page = () => {
   return (
     <>
 
-
-      <div className={"relative  bg-black"}>
+      <div className={"relative bg-black"}>
         <div className={" w-full max-w-[1240px] px-[24px]  mx-auto"}>
           <div className={"z-100 relative"}>
             <Header/>
