@@ -211,7 +211,7 @@ const ContactUs = () => {
                       }
                     ]}
                   >
-                    <Input onChange={(e) => {
+                    <Input inputMode={"tel"} onChange={(e) => {
                       if (e?.target?.value) {
                         setSaveError(current => current?.filter(item => item !== "phoneNumber"))
                       } else {
@@ -247,7 +247,7 @@ const ContactUs = () => {
                       }
                     ]}
                   >
-                    <Input onChange={(e) => {
+                    <Input inputMode={"email"} onChange={(e) => {
                       if (e?.target?.value) {
                         setSaveError(current => current?.filter(item => item !== "email"))
                       } else {
@@ -273,7 +273,7 @@ const ContactUs = () => {
 
 
 
-              <div className={"flex flex-wrap gap-x-8 gap-y-16 text-buttonTextSmall mt-32"} aria-required={false}>
+              <div data-aos={"fade-left"} className={"flex flex-wrap gap-x-8 gap-y-16 text-buttonTextSmall mt-32"} aria-required={false}>
 
                 {
                   services?.map(item =>
