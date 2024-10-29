@@ -12,6 +12,7 @@ import TranslationsProvider from "@/app/providers/translation-provider";
 import initTranslations from "@/i18n";
 import {FC, PropsWithChildren} from "react";
 import i18nConfig from "@/i18n-config";
+import {Metadata} from "next";
 
 const poppins = Poppins({subsets: ['latin'], variable: '--poppins', weight: ['300', '400', '500', '700']});
 
@@ -38,14 +39,21 @@ const shabnamFont = localFont({
 
 const namespaces = [
   'common',
-
 ];
 
-export const generateStaticParams = async () => i18nConfig?.locales?.map(locale => ({ locale }));
+
+export const metadata: Metadata = {
+  title: 'khat',
+  description: 'khat website',
+  keywords:"test,test2"
+}
+
+export const generateStaticParams = async () => i18nConfig?.locales?.map(locale => ({locale}));
 
 
 const RootLayout: FC<PropsWithChildren & { params: any }> = async ({children, params: {locale}}) => {
   const {resources, i18n: {dir}} = await initTranslations(locale, namespaces);
+
 
 
 

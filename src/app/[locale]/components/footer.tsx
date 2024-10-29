@@ -16,12 +16,13 @@ import {XFill} from "@/templates/icons/x-fill";
 import {Youtube} from "@/templates/icons/youtube";
 import {YoutubeFill} from "@/templates/icons/youtube-fill";
 import {Mailbox} from "@/templates/icons/mailbox";
+import {useTranslation} from "react-i18next";
 
 
 const Footer = () => {
 
   const [icons, setIcons] = useState("")
-
+  const {t} = useTranslation()
 
 
   return (
@@ -30,70 +31,79 @@ const Footer = () => {
         <div className={"mt-[64px] mb-[50px]"}>
           <Image src={aboutUsBg} alt={'aboutUsBg'} className={"mx-auto size-[87px]"}/>
         </div>
-        <div className={"flex gap-[5vw] lg:gap-[112px] justify-center max-md:justify-between text-neutral w-full mx-auto text-[18px]  [&>a]:text-neutral [&>a]:!font-[400]"}>
+        <div
+          className={"flex gap-[5vw] lg:gap-[112px] justify-center max-md:justify-between text-neutral w-full mx-auto text-[18px]  [&>a]:text-neutral [&>a]:!font-[400]"}>
           <Link
             to="aboutUS"
+            href={""}
           >
-            درباره ما
+            {t('aboutUs')}
+
           </Link>
 
           <Link
             to="whatWeDo"
+            href={""}
           >
-            خدمات
+            {t('whatWeDo')}
           </Link>
 
           <Link
             to="services"
+            href={""}
           >
-            نمونه کارها
+            {t('services')}
           </Link>
 
           <Link
             to="contactUs"
+            href={""}
           >
-            تماس با ما
+            {t('contactUs')}
           </Link>
 
         </div>
         <div className={"flex item-center justify-center max-md:justify-between mt-[56px] gap-[5vw] lg:gap-[89px]"}>
           <div onMouseEnter={() => setIcons("instagram")} onMouseLeave={() => setIcons("")}>
-            {icons!=="instagram"?
+            {icons !== "instagram" ?
               <Instagram/>
-              :<InstagramFill className={" hover:scale-125 duration-200 cursor-pointer"}/>
+              : <InstagramFill className={" hover:scale-125 duration-200 cursor-pointer"}/>
             }
           </div>
 
           <div onMouseEnter={() => setIcons("linkedin")} onMouseLeave={() => setIcons("")}>
-            {icons!=="linkedin"?
+            {icons !== "linkedin" ?
               <Linkedin/>
-              :<LinkedinFill className={"hover:scale-125 duration-200 cursor-pointer"}/>
+              : <LinkedinFill className={"hover:scale-125 duration-200 cursor-pointer"}/>
             }
           </div>
 
-          <Telegram className={"stroke-neutralLightest hover:stroke-[#24A1DE] hover:scale-125 duration-200 cursor-pointer"}/>
+          <Telegram
+            className={"stroke-neutralLightest hover:stroke-[#24A1DE] hover:scale-125 duration-200 cursor-pointer"}/>
           <div onMouseEnter={() => setIcons("x")} onMouseLeave={() => setIcons("")}>
-            {icons!=="x"?
+            {icons !== "x" ?
               <XIcon/>
-              :<XFill className={"hover:scale-125 duration-200 cursor-pointer"}/>
+              : <XFill className={"hover:scale-125 duration-200 cursor-pointer"}/>
             }
           </div>
 
           <div onMouseEnter={() => setIcons("youtube")} onMouseLeave={() => setIcons("")}>
-            {icons!=="youtube"?
+            {icons !== "youtube" ?
               <Youtube/>
-              :<YoutubeFill className={"hover:scale-125 duration-200 cursor-pointer"}/>
+              : <YoutubeFill className={"hover:scale-125 duration-200 cursor-pointer"}/>
             }
           </div>
 
 
-          <Mailbox className={"stroke-neutralLightest hover:stroke-primary-dark hover:scale-125 duration-200 cursor-pointer"}/>
+          <Mailbox
+            className={"stroke-neutralLightest hover:stroke-primary-dark hover:scale-125 duration-200 cursor-pointer"}/>
 
         </div>
       </div>
       <div
         className={"bg-[linear-gradient(90deg,#5D5D5D_0%,#888_50%,#5D5D5D_100%)] w-full h-[1px] text-white mt-[56px]"}/>
-      <div className={" text-white text-[12px] font-[400] text-center pt-[16px] pb-[55px]"}>Copyright KHAT Digital Marketing Agency 2024 | Privacy
+      <div className={" text-white text-[12px] font-[400] text-center pt-[16px] pb-[55px]"}>Copyright KHAT Digital
+        Marketing Agency 2024 | Privacy
         Policy
       </div>
     </div>

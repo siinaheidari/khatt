@@ -29,13 +29,18 @@ const ContactUs = () => {
   const handleSelectedServices = (value: TServices) => setSelectedServices(current => current?.includes(value?.id) ?
     current?.filter(item => item !== value?.id) : ([...current, value?.id]));
 
+  useEffect(() => {
+    formRef.setFieldsValue({"selectedServices": selectedServices})
+  }, [selectedServices]);
+
+
   const handleSubmit = async () => {
     try {
-
       setSaveError([])
       await formRef.validateFields()
       setLoading(true)
       const values = formRef.getFieldsValue(true)
+
       await axios.post(`https://jsonplaceholder.typicode.com/users`, {values})
         .then(res => {
           toast.success(t('Your request has been successfully registered'))
@@ -133,7 +138,6 @@ const ContactUs = () => {
 
           <Form
             form={formRef}
-            name="basic"
             className={'w-full'}
             labelCol={{
               span: 24
@@ -267,46 +271,51 @@ const ContactUs = () => {
                 لورم ایپسوم متن ساختگی با (تولید سادگی)
               </div>
 
+
+
+              <div className={"flex flex-wrap gap-x-8 gap-y-16 text-buttonTextSmall mt-32"} aria-required={false}>
+
+                {
+                  services?.map(item =>
+                    <div
+                      onClick={() => {
+                        handleSelectedServices(item)
+                      }}
+                      key={item?.id}
+                      className={clsx(' py-[16px] text-neutralDarker w-fit px-[16px] bg-white flex border border-[#00000040] rounded-[20px] cursor-pointer hover:text-black  hover:border-black relative', {'!bg-primary  !text-black border-black': selectedServices.includes(item?.id)})}
+                    >
+                      <div className={'invisible'}>
+                        {item?.title}
+                      </div>
+
+                      <div
+                        className={clsx('absolute  w-full text-center start-0 transition-all duration-100', {'!start-[-16px]': selectedServices.includes(item?.id)})}>
+                        {item?.title}
+                      </div>
+
+                      <Tick
+                        className={clsx({"transition-all duration-500": selectedServices.includes(item?.id)}, {"!opacity-0 ": !selectedServices.includes(item?.id)})}/>
+                    </div>
+                  )
+                }
+
+
+              </div>
               <Form.Item name={"selectedServices"}
+                         className={"w-full relative bottom-[1.9rem]"}
                          rules={[
                            {
                              required: true,
                              message: t('Please select at least one item')
                            },
                          ]}
-              >
-                <div data-aos={"fade-left"} className={"flex flex-wrap gap-x-8 gap-y-16 text-buttonTextSmall mt-32"}>
-                  {
-                    services?.map(item =>
-                      <div
-                        onClick={() => {
-                          handleSelectedServices(item)
-                          formRef.setFieldsValue({"selectedServices": item})
-                        }}
-                        key={item?.id}
-                        className={clsx(' py-[16px] text-neutralDarker w-fit px-[16px] bg-white flex border border-[#00000040] rounded-[20px] cursor-pointer hover:text-black  hover:border-black relative', {'!bg-primary  !text-black border-black': selectedServices.includes(item?.id)})}
-                      >
-                        <div className={'invisible'}>
-                          {item?.title}
-                        </div>
-
-                        <div
-                          className={clsx('absolute  w-full text-center start-0 transition-all duration-100', {'!start-[-16px]': selectedServices.includes(item?.id)})}>
-                          {item?.title}
-                        </div>
-
-                        <Tick
-                          className={clsx({"transition-all duration-500": selectedServices.includes(item?.id)}, {"!opacity-0 ": !selectedServices.includes(item?.id)})}/>
-                      </div>
-                    )
-                  }
 
 
-                </div>
-              </Form.Item>
+              />
 
 
-              <div className={"mb-32 w-full "}>
+
+              <div className={"w-full relative bottom-[1.9rem]"}>
                 <Button onClick={handleSubmit}
 
 

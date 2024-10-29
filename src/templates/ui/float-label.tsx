@@ -19,7 +19,7 @@ const FloatLabel: FC<PropsWithChildren<{ label?: string, name: string, className
       onFocus={() => setFocus(true)}
     >
       {children}
-      <label className={labelClass}>{label}</label>
+      <label htmlFor={ name } className={labelClass}>{label}</label>
     </div>
   );
 };

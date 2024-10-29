@@ -19,6 +19,7 @@ const Header = () => {
         <div className={"flex justify-center gap-[48px] text-neutral text-[18px] [&>a]:text-neutral [&>a]:!font-[400] max-md:hidden"}>
           <Link
             to="aboutUS"
+href={""}
           >
             {t('aboutUs')}
 
@@ -26,18 +27,21 @@ const Header = () => {
 
           <Link
             to="whatWeDo"
+            href={""}
           >
             {t('whatWeDo')}
           </Link>
 
           <Link
             to="services"
+            href={""}
           >
             {t('services')}
           </Link>
 
           <Link
             to="contactUs"
+            href={""}
           >
             {t('contactUs')}
           </Link>

@@ -9,7 +9,7 @@ import {clsx} from "clsx";
 
 const MainSection = () => {
 
-  const {t,i18n:{language}} = useTranslation('common')
+  const {t, i18n: {language}} = useTranslation('common')
 
 
   return (
@@ -31,13 +31,18 @@ const MainSection = () => {
         </div>
 
 
-        <div className={"border border-neutral rounded-[20px] group text-buttonTextLarge overflow-hidden mt-[72px] mx-auto px-[24px] h-[70px] center w-fit cursor-pointer hover:bg-primary [&>a]:hover:!text-black duration-500 [&>a]:!text-neutralLightest"}>
+        <div
+          className={"border border-neutral rounded-[20px] group text-buttonTextLarge overflow-hidden mt-[72px] mx-auto px-[24px] h-[70px] center w-fit cursor-pointer hover:bg-primary [&>a]:hover:!text-black duration-500 [&>a]:!text-neutralLightest"}>
           <Link
             duration={5000}
             to="contactUs"
+            href={""}
           >
             {t('Let’s Talk')}
-            <LineArrowLeft className={clsx( "ms-24 group-hover:!stroke-black stroke-white duration-200",{"rotate-180 group-hover:rotate-90 !d-ltr":language==="en","group-hover:-rotate-90":language==="fa"})}/>
+            <LineArrowLeft className={clsx("ms-24 group-hover:!stroke-black stroke-white duration-200", {
+              "rotate-180 group-hover:-rotate-90 ": language === "en",
+              "group-hover:-rotate-90": language === "fa"
+            })}/>
           </Link>
 
         </div>
