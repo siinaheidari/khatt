@@ -4,7 +4,7 @@
 import Tilt from 'react-parallax-tilt';
 import Image from "next/image";
 import SimpleParallax from "simple-parallax-js";
-import mainSectionBanner from "/public/images/main-Section (3).jpg"
+import mainSectionBanner from "/public/images/main-Section(3).jpg"
 import {useEffect, useRef, useState} from "react";
 import Lottie from "lottie-react";
 import upLottie from "../../../public/lottie/up.json";
@@ -12,14 +12,14 @@ import {clsx} from "clsx";
 import dynamic from "next/dynamic";
 
 
-const Header = dynamic(() => import('./components/header'), { ssr: false });
-const PageParticles = dynamic(() => import('@/app/[locale]/components/particles'), { ssr: false });
-const MainSection = dynamic(() => import('@/app/[locale]/components/main-section'), { ssr: false });
-const AboutUS = dynamic(() => import('@/app/[locale]/components/about-us'), { ssr: false });
-const WhatWeDo = dynamic(() => import('@/app/[locale]/components/what-we-do'), { ssr: false });
-const Services = dynamic(() => import('@/app/[locale]/components/services'), { ssr: false });
-const ContactUs = dynamic(() => import('@/app/[locale]/components/contact-us'), { ssr: false });
-const Footer = dynamic(() => import('@/app/[locale]/components/footer'), { ssr: false });
+const Header = dynamic(() => import('./components/header'));
+const PageParticles = dynamic(() => import('@/app/[locale]/components/particles'));
+const MainSection = dynamic(() => import('@/app/[locale]/components/main-section'));
+const AboutUS = dynamic(() => import('@/app/[locale]/components/about-us'));
+const WhatWeDo = dynamic(() => import('@/app/[locale]/components/what-we-do'));
+const Services = dynamic(() => import('@/app/[locale]/components/services'));
+const ContactUs = dynamic(() => import('@/app/[locale]/components/contact-us'));
+const Footer = dynamic(() => import('@/app/[locale]/components/footer'));
 
 
 
