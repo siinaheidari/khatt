@@ -4,7 +4,7 @@
 import Tilt from 'react-parallax-tilt';
 import Image from "next/image";
 import SimpleParallax from "simple-parallax-js";
-import mainSectionBanner from "/public/images/main-Section(3).jpg"
+import mainSectionBanner from "/public/images/main-Section (3).jpg"
 import {useEffect, useRef, useState} from "react";
 import Lottie from "lottie-react";
 import upLottie from "../../../public/lottie/up.json";
