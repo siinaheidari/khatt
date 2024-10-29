@@ -9,14 +9,18 @@ import {useEffect, useRef, useState} from "react";
 import Lottie from "lottie-react";
 import upLottie from "../../../public/lottie/up.json";
 import {clsx} from "clsx";
-import Header from './components/header';
-import PageParticles from "@/app/[locale]/components/particles";
-import MainSection from "@/app/[locale]/components/main-section";
-import AboutUS from "@/app/[locale]/components/about-us";
-import WhatWeDo from "@/app/[locale]/components/what-we-do";
-import Services from "@/app/[locale]/components/services";
-import ContactUs from "@/app/[locale]/components/contact-us";
-import Footer from "@/app/[locale]/components/footer";
+import dynamic from "next/dynamic";
+
+
+const Header = dynamic(() => import('./components/header'), { ssr: false });
+const PageParticles = dynamic(() => import('@/app/[locale]/components/particles'), { ssr: false });
+const MainSection = dynamic(() => import('@/app/[locale]/components/main-section'), { ssr: false });
+const AboutUS = dynamic(() => import('@/app/[locale]/components/about-us'), { ssr: false });
+const WhatWeDo = dynamic(() => import('@/app/[locale]/components/what-we-do'), { ssr: false });
+const Services = dynamic(() => import('@/app/[locale]/components/services'), { ssr: false });
+const ContactUs = dynamic(() => import('@/app/[locale]/components/contact-us'), { ssr: false });
+const Footer = dynamic(() => import('@/app/[locale]/components/footer'), { ssr: false });
+
 
 
 const Page = () => {
