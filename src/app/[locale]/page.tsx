@@ -13,7 +13,7 @@ import dynamic from "next/dynamic";
 
 
 const Header = dynamic(() => import('./components/header'));
-
+const PageParticles = dynamic(() => import('@/app/[locale]/components/particles'), {ssr: false});
 const MainSection = dynamic(() => import('@/app/[locale]/components/main-section'));
 const AboutUS = dynamic(() => import('@/app/[locale]/components/about-us'));
 const WhatWeDo = dynamic(() => import('@/app/[locale]/components/what-we-do'));
@@ -60,9 +60,9 @@ const Page = () => {
           <div className={"z-100 relative"}>
             <Header/>
           </div>
-      {/*    <div className={"relative"}>
+          <div className={"relative"}>
             <PageParticles/>
-          </div>*/}
+          </div>
           <div className={"relative z-10 pt-[44px] pb-[56px]"}>
             <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.03} transitionSpeed={3000}>
               <MainSection/>
@@ -74,7 +74,8 @@ const Page = () => {
       <div className={"bg-[linear-gradient(#070707,#070707_68%,#fff_0,#fff)] "}>
         <div className={" w-full !max-w-[1240px] mx-auto px-[24px]"}>
           <SimpleParallax scale={1.2}>
-            <Image placeholder={"blur"} layout={"responsive"} loading="lazy" height={500} src={mainSectionBanner} alt="image"
+            <Image placeholder={"blur"} layout={"responsive"} height={500} src={mainSectionBanner}
+                   alt="image"
                    className={"!aspect-auto mx-auto max-md:h-[500px] max-md:object-cover "}/>
           </SimpleParallax>
         </div>
