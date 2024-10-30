@@ -60,9 +60,9 @@ const Page = () => {
           <div className={"z-100 relative"}>
             <Header/>
           </div>
-          <div className={"relative"}>
+      {/*    <div className={"relative"}>
             <PageParticles/>
-          </div>
+          </div>*/}
           <div className={"relative z-10 pt-[44px] pb-[56px]"}>
             <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.03} transitionSpeed={3000}>
               <MainSection/>
