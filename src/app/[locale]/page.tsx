@@ -22,7 +22,6 @@ const ContactUs = dynamic(() => import('@/app/[locale]/components/contact-us'));
 const Footer = dynamic(() => import('@/app/[locale]/components/footer'));
 
 
-
 const Page = () => {
 
   const targetRef = useRef<any>();
@@ -73,23 +72,20 @@ const Page = () => {
 
       </div>
       <div className={"bg-[linear-gradient(#070707,#070707_68%,#fff_0,#fff)] "}>
-        {/*<div className={" w-full !max-w-[1240px] mx-auto px-[24px]"}>
+        <div className={" w-full !max-w-[1240px] mx-auto px-[24px]"}>
           <SimpleParallax scale={1.2}>
             <Image layout={"responsive"} loading="lazy" height={500} src={mainSectionBanner} alt="image"
                    className={"!aspect-auto mx-auto max-md:h-[500px] max-md:object-cover "}/>
           </SimpleParallax>
-        </div>*/}
-
+        </div>
       </div>
       <div id="aboutUS" className={" px-[24px]"}>
         <AboutUS/>
       </div>
 
-
       <div id="whatWeDo" ref={targetRef} className={""}>
         <WhatWeDo/>
       </div>
-
 
       <div id="services" className={"bg-black px-[24px] "}>
         <Services/>
