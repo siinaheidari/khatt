@@ -8,8 +8,9 @@
 }
 
 
-html {
+html *{
   font-family: var(--fontFamily);
+
 }
 
 html[lang='en'] {

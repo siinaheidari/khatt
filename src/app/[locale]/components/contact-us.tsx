@@ -9,6 +9,8 @@ import {toast} from "react-toastify";
 import axios from "axios";
 import FloatLabel from "@/templates/ui/float-label";
 import {useTranslation} from "react-i18next";
+import {AntdRegistry} from "@ant-design/nextjs-registry";
+import AntdProvider from "@/app/providers/antd";
 
 type TServices = {
   title: string,
@@ -124,7 +126,8 @@ const ContactUs = () => {
 
   return (
     <div className={" mb-[52px] relative w-full max-w-[1240px] mx-auto overflow-hidden"}>
-
+      <AntdRegistry>
+        <AntdProvider>
       <div className={"w-full max-w-[1000px]"}>
         <div data-aos={"fade-down"} className={"absolute !top-[05px] !start-[100px]"}>
           <DownLine/>
@@ -340,7 +343,8 @@ const ContactUs = () => {
         </div>
       </div>
 
-
+        </AntdProvider>
+      </AntdRegistry>
     </div>
 
   );

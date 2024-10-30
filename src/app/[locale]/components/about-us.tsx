@@ -7,7 +7,7 @@ const AboutUS = () => {
   const {t} = useTranslation('common')
 
   return (
-    <div className={"center min-h-screen relative w-full max-w-[1240px] mx-auto !overflow-hidden"}>
+    <div className={"center min-h-screen relative w-full max-w-[1240px] mx-auto !overflow-hidden "}>
       <div data-aos={"fade-down"} className={"absolute !top-[90px] !end-[100px] max-md:!top-0 max-md:!end-[30px]"}>
         <DownLine/>
       </div>

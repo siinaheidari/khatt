@@ -2,8 +2,6 @@ import "../globals.css";
 import {Layout} from "antd";
 import {Cairo, Poppins} from "next/font/google";
 import localFont from "next/font/local";
-import {AntdRegistry} from "@ant-design/nextjs-registry";
-import AntdProvider from "../providers/antd";
 import SplashScreen from "../providers/splash-screen";
 import AosProvider from "../providers/aos";
 import 'react-toastify/ReactToastify.min.css';
@@ -73,15 +71,13 @@ const RootLayout: FC<PropsWithChildren & { params: any }> = async ({children, pa
           closeButton
           bodyClassName="text-[0.875rem] font-dynamicFont"
           stacked/>
-        <AntdRegistry>
-          <AntdProvider>
+
             <SplashScreen>
               <Layout className={"!min-h-dvh"}>
                 {children}
               </Layout>
             </SplashScreen>
-          </AntdProvider>
-        </AntdRegistry>
+
       </AosProvider>
     </TranslationsProvider>
     </body>

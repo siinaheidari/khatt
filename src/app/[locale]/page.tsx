@@ -79,7 +79,7 @@ const Page = () => {
           </SimpleParallax>
         </div>
       </div>
-      <div id="aboutUS" className={" px-[24px]"}>
+      <div id="aboutUS" className={" px-[24px] bg-[#fff]"}>
         <AboutUS/>
       </div>
 
