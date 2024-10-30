@@ -87,7 +87,7 @@ module.exports = {
       fontSize: {
 
         h1: [ '5rem', { lineHeight: 'normal', fontWeight: 900 } ],
-        h2: [ '2.1rem', { lineHeight: 'normal', fontWeight: 400 } ],
+        h2: [ '3.5rem', { lineHeight: 'normal', fontWeight: 400 } ],
         h3: [ '2rem', { lineHeight: 'normal', fontWeight: 800 } ],
         buttonTextSmall: [ '1.25rem', { lineHeight: 'normal', fontWeight: 500 } ],
         buttonTextLarge: [ '1.75rem', { lineHeight: 'normal', fontWeight: 400 } ],

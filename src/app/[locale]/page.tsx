@@ -13,7 +13,7 @@ import dynamic from "next/dynamic";
 
 
 const Header = dynamic(() => import('./components/header'));
-const PageParticles = dynamic(() => import('@/app/[locale]/components/particles'));
+
 const MainSection = dynamic(() => import('@/app/[locale]/components/main-section'));
 const AboutUS = dynamic(() => import('@/app/[locale]/components/about-us'));
 const WhatWeDo = dynamic(() => import('@/app/[locale]/components/what-we-do'));
