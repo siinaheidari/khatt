@@ -29,7 +29,7 @@ const Footer = () => {
     <div className={""}>
       <div className={"w-full max-w-[1240px] mx-auto"}>
         <div className={"mt-[64px] mb-[50px]"}>
-          <Image src={aboutUsBg} alt={'aboutUsBg'} className={"mx-auto size-[87px]"}/>
+          <Image loading="lazy" src={aboutUsBg} alt={'aboutUsBg'} className={"mx-auto size-[87px]"}/>
         </div>
         <div
           className={"flex gap-[5vw] lg:gap-[112px] justify-center max-md:justify-between text-neutral w-full mx-auto text-[18px]  [&>a]:text-neutral [&>a]:!font-[400]"}>

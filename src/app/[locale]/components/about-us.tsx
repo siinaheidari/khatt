@@ -31,7 +31,7 @@ const AboutUS = () => {
           </div>
         </div>
         <div data-aos={"fade-left"}>
-          <Image src={aboutUsBg} alt={'aboutUsBg'} className={"max-md:size-[200px]"}/>
+          <Image priority loading="lazy" src={aboutUsBg} alt={'aboutUsBg'} className={"max-md:size-[200px]"}/>
         </div>
 
       </div>
