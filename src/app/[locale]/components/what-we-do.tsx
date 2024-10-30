@@ -11,7 +11,6 @@ const WhatWeDo = () => {
   const containerRef = useRef(null);
 
 
-
   const [showScrollTop, setShowScrollTop] = useState(false)
 
 
@@ -33,7 +32,6 @@ const WhatWeDo = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
 
 
   useEffect(() => {
@@ -78,7 +76,7 @@ const WhatWeDo = () => {
       <div
         className={" w-full max-w-[1240px] mx-auto md:center md:h-screen !sticky top-0 flex items-center justify-start !overflow-hidden max-md:!mb-64"}>
         <div className={"flex justify-between max-md:flex-col items-center gap-x-[61px]"}>
-          <Image priority loading="lazy" src={whatWeDo} alt="whatWeDo"
+          <Image loading="lazy" src={whatWeDo} alt="whatWeDo"
                  className={"mx-auto aspect-auto w-1/2 max-md:hidden"}
                  placeholder={"blur"}/>
           <div className={"w-full text-caption max-lg:text-bodyText1 text-bodyText2 space-y-[24px]"}>
@@ -93,8 +91,10 @@ const WhatWeDo = () => {
               transition={{duration: 0.5}}
             >
             </motion.div>
-            <div className={clsx('transition-all duration-1000',{"opacity-10 ":showScrollTop}, {'!opacity-100': activeIndex >= 1})}>
-              <div className={"bg-[linear-gradient(90deg,#FFE943_0%,#CE9300_50%,#FFD60A_100%)] inline-block text-transparent bg-clip-text mt-24"}>
+            <div
+              className={clsx('transition-all duration-1000', {"opacity-10 ": showScrollTop}, {'!opacity-100': activeIndex >= 1})}>
+              <div
+                className={"bg-[linear-gradient(90deg,#FFE943_0%,#CE9300_50%,#FFD60A_100%)] inline-block text-transparent bg-clip-text mt-24"}>
                 01.
               </div>
               <div className={""}>
@@ -102,9 +102,11 @@ const WhatWeDo = () => {
               </div>
             </div>
 
-            <div className={clsx('transition-all duration-1000',{"opacity-10 ":showScrollTop}, {'!opacity-100': activeIndex >= 2})}
-                 data-aos-duration="1000">
-              <div className={"bg-[linear-gradient(90deg,#FFE943_0%,#CE9300_50%,#FFD60A_100%)] inline-block text-transparent bg-clip-text mt-24"}>
+            <div
+              className={clsx('transition-all duration-1000', {"opacity-10 ": showScrollTop}, {'!opacity-100': activeIndex >= 2})}
+              data-aos-duration="1000">
+              <div
+                className={"bg-[linear-gradient(90deg,#FFE943_0%,#CE9300_50%,#FFD60A_100%)] inline-block text-transparent bg-clip-text mt-24"}>
                 02.
               </div>
               <div className={""}>
@@ -113,8 +115,10 @@ const WhatWeDo = () => {
               </div>
             </div>
 
-            <div className={clsx('transition-all duration-1000',{"opacity-10 ":showScrollTop}, {'!opacity-100': activeIndex >= 3})}>
-              <div className={"bg-[linear-gradient(90deg,#FFE943_0%,#CE9300_50%,#FFD60A_100%)] inline-block text-transparent bg-clip-text"}>
+            <div
+              className={clsx('transition-all duration-1000', {"opacity-10 ": showScrollTop}, {'!opacity-100': activeIndex >= 3})}>
+              <div
+                className={"bg-[linear-gradient(90deg,#FFE943_0%,#CE9300_50%,#FFD60A_100%)] inline-block text-transparent bg-clip-text"}>
                 03.
               </div>
               <div className={""}>
